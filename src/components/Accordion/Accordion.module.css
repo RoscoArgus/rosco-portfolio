@@ -1,0 +1,39 @@
+@import '../../vars.css';
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin: auto;
+}
+
+.accordionItem {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 1rem;
+    border-radius: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    transition: flex-grow 0.3s ease, height 0.3s ease-in-out;
+}
+
+.accordionItem .header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.accordionItem .description {
+    margin-top: 1rem;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease-in-out;
+}
+
+.accordionItem:hover .description {
+    opacity: 1;
+    height: auto;
+}

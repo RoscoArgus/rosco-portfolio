@@ -1,0 +1,144 @@
+@import "../../vars.css";
+
+.section {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-secondary);
+    padding: 35px 114px;
+}
+
+.aboutItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text);
+    z-index: 1;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 30px;
+    font-family: var(--font-roboto);
+}
+
+.aboutImg {
+    height: 25vw;
+    min-height: 350px;
+    width: 30vw;
+    z-index: 1;
+    border: 5px solid white;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.accordion {
+    height: 25vw;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.accordionItem {
+    background-color: var(--color-primary);
+    display: flex;
+    flex: 1; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 50px;
+    border-radius: 50vh;
+    overflow: hidden;
+    transition: flex-grow 0.3s ease, height 0.3s ease-in-out, flex 0.3s ease-in-out;
+}
+
+.accordionItem .content {
+    display: flex;
+    align-items: center;
+}
+
+.accordionItem .content .icon {
+    margin-right: 10px;
+}
+
+.accordionItem .content .header {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.accordionItem .description {
+    text-align: center;
+    opacity: 0;
+    font-size: 17px;
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease-in-out, margin 0.3s ease-in-out;
+}
+
+.accordionItem:hover .description {
+    opacity: 1;
+    max-height: 200px;
+    margin: 10px 0 0 0;
+    transform: scaleY(1);
+}
+
+
+.accordionItem:hover {
+    flex-grow: 3;
+}
+
+@media screen and (max-width: 1150px) {  
+    .section {
+        padding: 35px 10px;
+    }
+
+    .aboutItems {
+        flex-direction: column;
+        border-radius: 25vw;
+    }
+
+    .title {
+        margin-bottom: 0px;
+        text-align: center;
+    }
+
+    .aboutImg {
+        height: 35vw;
+        width: 70vw;
+        margin: 35px 0;
+        object-position: 50% 40%;
+    }
+
+    .accordion {
+        height: auto;
+        width: auto;
+    }
+
+    .accordionItem {
+        padding: 30px;
+    }
+
+    .accordionItem:hover {
+        padding: 30px;
+    }
+
+    .accordionItem .content .header {
+        font-size: min(22px, 7vw);
+    }
+
+    .accordionItem .description {
+        font-size: min(17px, 5vw);
+        opacity: 1;
+        height: auto;
+        margin-top: 10px;
+        max-height: 200px;
+    }
+
+    .accordionItem:hover .description {
+        margin: 10px 0 0 0;
+    }
+}

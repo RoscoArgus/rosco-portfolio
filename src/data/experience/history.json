@@ -1,0 +1,18 @@
+[
+    {
+        "role": "Software Engineer",
+        "organisation": "TCD SwEng Project - Nitro",
+        "startDate": "Jan, 2023",
+        "endDate": "Apr, 2023",
+        "experiences": ["Worked on AI image identification in PDFs with Detectron2", "Built lightweight front-end using Gradio", "Awarded for 'Outstanding Project'"],
+        "imageSrc": "experience/nitro.png"
+    },
+    {
+        "role": "Project Lead",
+        "organisation": "TCD SwEng Project - Quantexa",
+        "startDate": "Jan, 2024",
+        "endDate": "Apr, 2024",
+        "experiences": ["Oversaw team of 11 with development of AI Taxonomy Builder","Helped design front-end using React", "Utilised prompt engineering to optimise queries"],
+        "imageSrc": "experience/quantexa.jpg"
+    }
+]
