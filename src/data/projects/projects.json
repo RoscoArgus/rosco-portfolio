@@ -14,7 +14,7 @@
     "bgColor": "#2D6E85",
     "imageSrc": "projects/roscoargus.png",
     "title": "roscoargus.dev",
-    "source": null,
+    "source": "https://github.com/RoscoArgus/rosco-portfolio",
     "demo": "https://www.roscoargus.dev",
     "desc":
       "My React portfolio website created to provide information about me and highlight some of the work I've done."
@@ -54,7 +54,7 @@
     "bgColor": "#2D6E85",
     "imageSrc": "projects/roscoargus.png",
     "title": "roscoargus.dev",
-    "source": null,
+    "source": "https://github.com/RoscoArgus/rosco-portfolio",
     "demo": "https://www.roscoargus.dev",
     "desc":
       "My React portfolio website created to provide information about me and highlight some of the work I've done."
