@@ -1,0 +1,12 @@
+[
+    {"label": "HTML", "image": "experience/html.png"},
+    {"label": "CSS", "image": "experience/css.png"},
+    {"label": "JavaScript", "image": "experience/js.png"},
+    {"label": "Node", "image": "experience/node.png"},
+    {"label": "React/Native", "image": "experience/react.png"},
+    {"label": "Java", "image": "experience/java.png"},
+    {"label": "Python", "image": "experience/python.png"},
+    {"label": "C", "image": "experience/c.png"},
+    {"label": "MySQL", "image": "experience/mysql.png"},
+    {"label": "Figma", "image": "experience/figma.png"}
+]

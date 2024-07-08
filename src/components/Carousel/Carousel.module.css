@@ -1,0 +1,164 @@
+@import '../../vars.css';
+
+.carousel {
+    flex: 1;
+    overflow: hidden;
+    justify-content: center;
+    margin: 30px 0;
+    position: relative; /* Ensure the pseudo-elements are positioned correctly */
+}
+
+.carousel::before,
+.carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50px; /* Adjust the width of the fade effect */
+    height: 100%;
+    z-index: 1; /* Ensure the pseudo-elements are above the slides */
+}
+
+.carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-primary), transparent);
+}
+
+.carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-primary), transparent);
+}
+
+.slideC {
+    position: relative;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+    width: 500px;
+    height: 350px;
+    margin: 0 auto;
+  }
+  
+.slide {
+  width: 500px;
+  height: 350px;
+  transition: transform 250ms ease 0s, opacity 250ms ease 0s,
+    visibility 250ms ease 0s;
+  position: absolute;
+  top: 0;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+/* 3D reflection effect */
+.reflection {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  bottom: -60px;
+  border-radius: 12px;
+  transition: transform 250ms ease 0s, opacity 250ms ease 0s,
+    visibility 250ms ease 0s;
+}
+
+.sliderContent {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  font-family: var(--font-roboto);
+}
+
+.sliderContent h2 {
+  margin: 16px 0;
+}
+
+.sliderContent p {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.sliderImg {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.sliderImg img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  object-position: top;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+.sliderText {
+  padding: 10px 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderButtons {
+  position: absolute;
+  bottom: 15px;
+  font-size: 40px;
+}
+
+.sliderButtons .sliderBtn {
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+.sliderButtons .sliderBtn:hover {
+  opacity: 70%;
+}
+
+.sliderButtons .disabled {
+  cursor: default;
+  opacity: 40%;
+}
+
+.sliderButtons .disabled:hover {
+  opacity: 40%;
+}
+
+/* normal css  */
+
+.btns {
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    gap: 70px;
+}
+
+.btns .btn {
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btns .btn:hover {
+  opacity: 70%;
+}
+
+@media screen and (max-width: 1150px) {
+    .slideC {
+      width: 100%;
+      height: 400px;
+    }
+    .slide {
+      width: 100%;
+      height: 400px;
+    }
+
+    .sliderImg {
+      width: 94vw;
+    }
+
+    .carousel::before, .carousel::after {
+      width: 0px;
+    }
+}
+/* normal css  */

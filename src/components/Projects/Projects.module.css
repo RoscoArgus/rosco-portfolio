@@ -1,0 +1,27 @@
+@import '../../vars.css';
+
+.section {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    padding: 35px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 30px 79px;
+    font-family: var(--font-roboto);
+}
+
+@media screen and (max-width: 1150px) {
+
+    .section {
+        padding: 15px 35px;
+    }
+    .title {
+        text-align: center;
+        margin-left: 0;
+    }
+}

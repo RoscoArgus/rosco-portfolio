@@ -1,0 +1,124 @@
+@import "../../vars.css";
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  margin: 50px 10%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--color-text);
+  z-index: 1;
+}
+
+.background {
+  display: flex;
+  height: auto;
+  min-height: 300px;
+  background-color: var(--color-primary);
+  align-items: center;
+  border-radius: 25vw;
+  padding-left: 12vw;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 900;
+  margin-bottom: 33px;
+  font-family: var(--font-roboto);
+}
+
+.description {
+  font-size: 25px;
+  font-family: var(--font-roboto);
+  margin-bottom: 52px;
+}
+
+.listItems {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 50px;
+}
+
+.listItem {
+  cursor: pointer;
+  font-size: 30px;
+  transition: opacity 0.3s ease;
+}
+
+.listItem:hover {
+  opacity: 0.7;
+}
+
+.listItem a {
+  color: white;
+  text-decoration: none;
+}
+
+.heroImg {
+  height: 25vw;
+  min-height: 300px;
+  width: auto;
+  z-index: 1;
+  border-radius: 50%;
+  margin-left: 50px;
+  border: 5px solid white;
+}
+
+@media screen and (max-width: 1150px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+
+  .content {
+    align-items: center;
+    background-color: var(--color-primary);
+    border-radius: 25vw;
+    padding: 50px 50px;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .heroImg {
+    margin-left: 0;
+    margin-bottom: 30px;
+    
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(5px);
+    }
+    100% {
+      transform: translatey(-0px);
+    }
+  }
+
+  .background {
+    background-color: transparent;
+    padding: 0;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+}
