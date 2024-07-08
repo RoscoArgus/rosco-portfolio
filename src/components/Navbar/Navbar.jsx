@@ -32,7 +32,7 @@ export const Navbar = () => {
             <a href="#projects">Projects</a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="mailto:roscod@live.ie">Contact</a>
           </li>
           <li>
             <a href="https://drive.google.com/file/d/13c8nDf8Fmo1Waa27yUEqJmHcWf3xjYqL/view?usp=sharing" target="_blank">CV</a>
