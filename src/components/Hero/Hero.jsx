@@ -6,7 +6,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaFigma } from 'react-icons/fa';
 const links = [
     { href: "mailto:roscod@live.ie", icon: <FaEnvelope />, label: "Email" },
     { href: "https://github.com/RoscoArgus", icon: <FaGithub />, label: "GitHub" },
-    { href: "https://www.linkedin.com/in/ross-devine/", icon: <FaLinkedin />, label: "LinkedIn" },
+    { href: "https://www.linkedin.com/in/roscoargus/", icon: <FaLinkedin />, label: "LinkedIn" },
     { href: "https://www.figma.com/@roscoargus", icon: <FaFigma />, label: "Figma" },
 ];
 
