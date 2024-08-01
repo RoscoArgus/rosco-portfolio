@@ -32,7 +32,7 @@
   {
     "id": 4,
     "bgColor": "red",
-    "imageSrc": null,
+    "imageSrc": "projects/countyhunter.PNG",
     "title": "County Hunter",
     "source": "https://github.com/RoscoArgus/county-hunter",
     "demo": null,
