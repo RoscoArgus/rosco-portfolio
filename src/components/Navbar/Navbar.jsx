@@ -35,7 +35,7 @@ export const Navbar = () => {
             <a href="mailto:roscod@live.ie">Contact</a>
           </li>
           <li>
-            <a href="https://drive.google.com/file/d/13c8nDf8Fmo1Waa27yUEqJmHcWf3xjYqL/view?usp=sharing" target="_blank">CV</a>
+            <a href="https://drive.google.com/file/d/15AJh0spDycVOvn6wqInrF_d16-5phCW7/view?usp=sharing" target="_blank">CV</a>
           </li>
         </ul>
       </div>
