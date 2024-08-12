@@ -65,6 +65,7 @@
 
 .heroImg {
   height: 25vw;
+  aspect-ratio: 1/1;
   min-height: 300px;
   width: auto;
   z-index: 1;
