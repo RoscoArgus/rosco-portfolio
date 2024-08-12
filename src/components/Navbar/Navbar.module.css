@@ -27,7 +27,7 @@
 
 .menuItems {
   display: flex;
-  gap: 47px;
+  gap: 50px;
   list-style: none;
 }
 
@@ -51,7 +51,6 @@
   .menu {
     position: absolute;
     right: 0;
-    margin-right: 10%;
     flex-direction: column;
     align-items: flex-end;
     gap: 11px;
