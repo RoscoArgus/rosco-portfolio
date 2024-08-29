@@ -35,7 +35,7 @@
     "imageSrc": "projects/countyhunter.PNG",
     "title": "County Hunter",
     "source": "https://github.com/RoscoArgus/county-hunter",
-    "demo": null,
+    "demo": "https://county-hunter.netlify.app",
     "desc":
       "A multiplayer geolocation game created using React, Firebase, and the Google Places API where players compete to discover a number of locations and finish with the highest score."
   },
@@ -75,7 +75,7 @@
     "imageSrc": "projects/countyhunter.PNG",
     "title": "County Hunter",
     "source": "https://github.com/RoscoArgus/county-hunter",
-    "demo": null,
+    "demo": "https://county-hunter.netlify.app",
     "desc":
       "A multiplayer geolocation game created using React, Firebase, and the Google Places API where players compete to discover a number of locations and finish with the highest score."
   }
