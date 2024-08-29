@@ -31,7 +31,7 @@
   },
   {
     "id": 4,
-    "bgColor": "red",
+    "bgColor": "#FF4343",
     "imageSrc": "projects/countyhunter.PNG",
     "title": "County Hunter",
     "source": "https://github.com/RoscoArgus/county-hunter",
@@ -71,7 +71,7 @@
   },
   {
     "id": 8,
-    "bgColor": "red",
+    "bgColor": "#FF4343",
     "imageSrc": "projects/countyhunter.PNG",
     "title": "County Hunter",
     "source": "https://github.com/RoscoArgus/county-hunter",
