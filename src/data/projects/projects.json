@@ -32,7 +32,7 @@
   {
     "id": 4,
     "bgColor": "#FF4343",
-    "imageSrc": "projects/countyhunter.PNG",
+    "imageSrc": "projects/county_hunter.png",
     "title": "County Hunter",
     "source": "https://github.com/RoscoArgus/county-hunter",
     "demo": "https://county-hunter.netlify.app",
@@ -72,7 +72,7 @@
   {
     "id": 8,
     "bgColor": "#FF4343",
-    "imageSrc": "projects/countyhunter.PNG",
+    "imageSrc": "projects/county_hunter.png",
     "title": "County Hunter",
     "source": "https://github.com/RoscoArgus/county-hunter",
     "demo": "https://county-hunter.netlify.app",

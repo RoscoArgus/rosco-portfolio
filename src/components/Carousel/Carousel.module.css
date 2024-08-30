@@ -153,8 +153,16 @@
       height: 400px;
     }
 
+    .sliderText {
+      padding: 10px 40px;
+    }
+
     .sliderImg {
       width: 94vw;
+      
+      img {
+        height: 125px;
+      }
     }
 
     .carousel::before, .carousel::after {
