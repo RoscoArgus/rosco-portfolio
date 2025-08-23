@@ -14,5 +14,13 @@
         "endDate": "Apr, 2024",
         "experiences": ["Oversaw team of 11 with development of AI Taxonomy Builder","Helped design front-end using React", "Utilised prompt engineering to optimise queries"],
         "imageSrc": "experience/quantexa.jpg"
+    },
+    {
+        "role": "Software Development Engineer Intern",
+        "organisation": "Workday",
+        "startDate": "Feb, 2025",
+        "endDate": "Aug, 2025",
+        "experiences": ["Contributed to development and implementation of Generative UI system and components for use within AI assistant side panel.", "Developed and maintained several user guidance features.", "Contributed to short and long-term company objectives."],
+        "imageSrc": "experience/workday.png"
     }
 ]

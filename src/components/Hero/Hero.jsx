@@ -17,7 +17,7 @@ export const Hero = () => {
             <div className={styles.content}>
                 <h1 className={styles.title}>Hi, I'm Ross</h1>
                 <p className={styles.description}>
-                I'm a 4th Year Integrated Computer Science student and aspiring Software Engineer. Keep scrolling to learn more!
+                I'm a 5th Year Integrated Computer Science student and aspiring Software Engineer. Keep scrolling to learn more!
                 </p>
                 <ul className={styles.listItems}>
                     {links.map((link, index) => (
