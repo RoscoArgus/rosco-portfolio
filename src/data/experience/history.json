@@ -1,11 +1,11 @@
 [
     {
-        "role": "Software Engineer",
-        "organisation": "TCD SwEng Project - Nitro",
-        "startDate": "Jan, 2023",
-        "endDate": "Apr, 2023",
-        "experiences": ["Worked on AI image identification in PDFs with Detectron2", "Built lightweight front-end using Gradio", "Awarded for 'Outstanding Project'"],
-        "imageSrc": "experience/nitro.png"
+        "role": "Software Development Engineer Intern",
+        "organisation": "Workday",
+        "startDate": "Feb, 2025",
+        "endDate": "Aug, 2025",
+        "experiences": ["Contributed to development and implementation of Generative UI system and components for use within AI assistant side panel.", "Developed and maintained several user guidance features.", "Contributed to short and long-term company objectives."],
+        "imageSrc": "experience/workday.png"
     },
     {
         "role": "Project Lead",
@@ -16,11 +16,11 @@
         "imageSrc": "experience/quantexa.jpg"
     },
     {
-        "role": "Software Development Engineer Intern",
-        "organisation": "Workday",
-        "startDate": "Feb, 2025",
-        "endDate": "Aug, 2025",
-        "experiences": ["Contributed to development and implementation of Generative UI system and components for use within AI assistant side panel.", "Developed and maintained several user guidance features.", "Contributed to short and long-term company objectives."],
-        "imageSrc": "experience/workday.png"
+        "role": "Software Engineer",
+        "organisation": "TCD SwEng Project - Nitro",
+        "startDate": "Jan, 2023",
+        "endDate": "Apr, 2023",
+        "experiences": ["Worked on AI image identification in PDFs with Detectron2", "Built lightweight front-end using Gradio", "Awarded for 'Outstanding Project'"],
+        "imageSrc": "experience/nitro.png"
     }
 ]
