@@ -5,7 +5,7 @@
     "imageSrc": "projects/ducss.png",
     "title": "DUCSS App",
     "source": null,
-    "demo": "https://www.ducss.ie/app",
+    "demo": null,
     "desc":
       "A React Native mobile app created for the Dublin University Computer Science Society (DUCSS) featuring user authentication, society information, and social features."
   },
