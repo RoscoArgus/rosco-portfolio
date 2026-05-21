@@ -19,6 +19,7 @@ export const PDF = ({ src, title }) => {
           width: "60%",
           minWidth: "750px",
           height: "100%",
+          marginBottom: "30px",
         }}
       />
     </div>
