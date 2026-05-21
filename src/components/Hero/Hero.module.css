@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   z-index: 1;
-  margin: 50px 10%;
+  margin: 40px 10%;
 }
 
 .content {
@@ -20,7 +20,7 @@
 .background {
   display: flex;
   height: auto;
-  min-height: 300px;
+  min-height: 350px;
   background-color: var(--color-primary);
   align-items: center;
   border-radius: 25vw;
@@ -64,9 +64,9 @@
 }
 
 .heroImg {
-  height: 25vw;
+  height: 20vw;
   aspect-ratio: 1/1;
-  min-height: 300px;
+  min-height: 350px;
   width: auto;
   z-index: 1;
   border-radius: 50%;
@@ -74,7 +74,7 @@
   border: 5px solid white;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1350px) {
   .container {
     flex-direction: column-reverse;
   }
@@ -83,7 +83,7 @@
     align-items: center;
     background-color: var(--color-primary);
     border-radius: 25vw;
-    padding: 50px 50px;
+    padding: 50px;
   }
 
   .description {

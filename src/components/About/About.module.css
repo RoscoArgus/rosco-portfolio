@@ -30,6 +30,7 @@
     width: 30vw;
     z-index: 1;
     border: 5px solid white;
+    border-radius: 10px;
     margin-right: 20px;
     object-fit: cover;
 }
@@ -91,7 +92,7 @@
     flex-grow: 3;
 }
 
-@media screen and (max-width: 1150px) {  
+@media screen and (max-width: 1350px) {  
     .section {
         padding: 35px 10px;
     }

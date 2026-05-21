@@ -6,7 +6,7 @@ import { getImageUrl } from '../../utils';
 const accordionItems = [
     {
         header: "Education",
-        description: "I am a 4th Year Integrated Computer Science student at Trinity College Dublin, expecting to graduate with my Master’s Degree in 2026. I have a First class Honours average (3.88 GPA equivalent).",
+        description: "I am a graduand of Trinity College Dublin, where I completed my Master's degree in Computer Science with First-Class Honours (3.93 GPA equivalent).",
         icon: <FaGraduationCap style={{fontSize: "35px"}} />
     },
     {
@@ -16,7 +16,7 @@ const accordionItems = [
     },
     {
         header: "Strengths",
-        description: "I’m passionate, driven, and a natural problem solver, meaning I’ll never back down from a challenge. I like things organised and efficient: two things which are greatly reflected in my work. I work well both alone and in teams and show clear consistent initiative.",
+        description: "I’m passionate, driven, and a natural problem solver, meaning I’ll never back down from a challenge. I like things organised and efficient: two things which are greatly reflected in my work. I work well both alone and in teams and show clear, consistent initiative.",
         icon: <FaAngleDoubleUp style={{fontSize: "25px"}} />
     }
 ];

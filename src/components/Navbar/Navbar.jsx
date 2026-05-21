@@ -4,6 +4,14 @@ import styles from "./Navbar.module.css";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const links = [
+    { text: "About Me", href: "/#about" },
+    { text: "Experience", href: "/#experience" },
+    { text: "Projects", href: "/#projects" },
+    { text: "Dissertation", href: "/dissertation" },
+    { text: "CV", href: "/cv" },
+    { text: "Contact", href: "mailto:roscod@live.ie" }
+  ];
 
   return (
     <nav className={styles.navbar}>
@@ -22,21 +30,11 @@ export const Navbar = () => {
           className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`}
           onClick={() => setMenuOpen(false)}
         >
-          <li>
-            <a href="#about">About Me</a>
-          </li>
-          <li>
-            <a href="#experience">Experience</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="mailto:roscod@live.ie">Contact</a>
-          </li>
-          <li>
-            <a href="https://drive.google.com/file/d/1G0EJ34Mr1K5mqtK5mMorekZKCW7Ahsrq/view?usp=sharing" target="_blank">CV</a>
-          </li>
+          {links.map((link, index) => (
+            <li key={index}>
+              <a href={link.href}>{link.text}</a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
