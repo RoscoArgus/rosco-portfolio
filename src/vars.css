@@ -6,6 +6,8 @@
 
     --font-roboto: "Roboto", Arial, Helvetica, sans-serif;
 
+    --navbar-height: 7.5rem;
+    
     background-color: var(--color-bg);
 }
   

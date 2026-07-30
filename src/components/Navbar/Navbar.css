@@ -1,5 +1,5 @@
 .navbar {
-    height: 120px;
+    height: var(--navbar-height);
     width: 100%;
     padding: 0 5dvw;
     display: flex;
@@ -46,23 +46,33 @@
     }
 }
 
-.navLinks li a:hover {
+.navLinks li a:hover,
+.navLinks li a:hover .icon {
     color: lch(from var(--color-text) calc(l * 0.8) c h);
+    fill: lch(from var(--color-text) calc(l * 0.8) c h);
 }
 
 .navLinks li .icon {
     font-size: 1rem;
     margin-left: 0.5rem;
+    transition: all 0.2s ease-in-out;
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        padding: 0 4rem;
-    }
-
     .navbar .menuButton {
         display: flex;
         anchor-name: --menuButton;
+    }
+
+    .navLinks::before {
+        content: "";
+        position: absolute;
+        top: -0.4rem;
+        right: 0;
+        background-color: var(--color-primary);
+        width: 0.8rem;
+        height: 0.8rem;
+        transform: translateX(-0.6rem) rotate(45deg);
     }
 
     .navLinks {

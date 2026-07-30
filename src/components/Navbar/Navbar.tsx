@@ -28,7 +28,7 @@ const Navbar = () => {
       <a className="title" href="/">
         roscoargus.dev
       </a>
-      {/*If media query triggered, display menu button*/}
+      {/*Only display menu button when media query triggered*/}
       <MenuButton isOpen={isMenuOpen} onClick={toggleMenu} />
       <ul className={`navLinks ${isMenuOpen ? 'open' : ''}`}>
         {links.map((link, index) => {
