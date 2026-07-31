@@ -12,5 +12,14 @@ html {
 
 section {
   display: flex;  
-  padding: 2rem;
+  flex-direction: column;
+  padding: 2rem 8dvw;
+}
+
+section > h1 {
+  margin-bottom: 2rem;
+}
+
+section:not(:first-child) {
+  padding-top: 10rem;
 }

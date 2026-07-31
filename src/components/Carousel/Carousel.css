@@ -1,0 +1,57 @@
+@property --rotation {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+.carousel {
+    position: relative;
+    list-style: none;
+    height: 10rem;
+    margin: 0 auto;
+    perspective: 1500px;
+    transform-style: preserve-3d;
+    animation: rotate 30s linear infinite;
+    --rotation: 0deg;
+    --width: 30dvw;
+}
+
+@keyframes rotate {
+    to { --rotation: 360deg; }
+}
+
+.carousel li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    --angle: calc(var(--rotation) + var(--i) * (360deg / var(--n)));
+    --depth: calc((cos(var(--angle)) + 1) / 2);
+    transition: box-shadow 0.2s ease-in-out;
+    transform:
+        translate(-50%, -50%)
+        translateX(calc(sin(var(--angle)) * var(--width)))
+        translateZ(calc(cos(var(--angle)) * var(--width)))
+        scale(calc(0.5 + var(--depth) * 0.5));
+    /*opacity: calc(0.15 + var(--depth) * 0.85);*/
+}
+
+.carousel li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel li:hover {
+    box-shadow:
+        0 0 0.75rem rgba(255, 255, 255, 0.9),
+        0 0 1.5rem rgba(255, 255, 255, 0.5),
+        0 0 2.5rem rgba(255, 255, 255, 0.25);
+}

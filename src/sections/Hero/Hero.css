@@ -1,5 +1,5 @@
 .hero {
-    justify-content: center;  
+    align-items: center;
 }
 
 .heroContainer {
@@ -8,7 +8,7 @@
     align-items: center;
     background-color: var(--color-primary);
     height: 20rem;
-    width: min(90%, 100rem);
+    width: 100%;
     border-radius: 10rem;
     padding: 0 0 0 8rem;
 }
@@ -60,7 +60,7 @@
     border: 0.25rem solid white;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 972px) {
     .heroContainer {
         display: flex;
         flex-direction: column-reverse;

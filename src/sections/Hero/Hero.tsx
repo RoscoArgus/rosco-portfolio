@@ -1,4 +1,5 @@
 import './Hero.css';
+import heroImage from '../../assets/hero1.jpg';
 import { FaGithub, FaLinkedin, FaFigma } from 'react-icons/fa';
 
 interface SocialLink {
@@ -33,7 +34,7 @@ const Hero = () => {
             ))}
           </ul>
         </div>
-        <img src="hero1.jpg" alt="Hero image of me" />
+        <img src={heroImage} alt="Hero image of me" />
       </div>
     </section>
   );

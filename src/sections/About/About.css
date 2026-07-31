@@ -1,0 +1,8 @@
+.about {
+    position: relative;
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-bg),
+        var(--color-secondary) 8rem
+    );
+}
