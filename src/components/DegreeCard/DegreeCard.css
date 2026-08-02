@@ -115,11 +115,11 @@
 @media (max-width: 768px) {
   .degree-card {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .degree-content {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .degree-award {
