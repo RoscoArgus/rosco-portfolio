@@ -1,14 +1,14 @@
 .navbar {
-    height: var(--navbar-height);
-    width: 100%;
-    padding: 0 5dvw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: var(--navbar-height);
+  width: 100%;
+  padding: 0 5dvw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar .menuButton {
-    display: none;
+  display: none;
 }
 
 .title {
@@ -16,79 +16,78 @@
   font-weight: 600;
 }
 
-
 .navLinks {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+  display: flex;
+  list-style: none;
+  gap: 2rem;
 }
 
 .navLinks li a {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--color-text);
-    font-size: 1.5rem;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 1.5rem;
 }
 
+.title,
+.navLinks li a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all 0.2s ease-in-out;
 
-.title, .navLinks li a {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--color-text);
-    transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
 
-    &:hover {
-        transform: scale(1.05);
-    }
-
-    &:active {
-        transform: scale(0.95);
-    }
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .navLinks li a:hover,
 .navLinks li a:hover .icon {
-    color: lch(from var(--color-text) calc(l * 0.8) c h);
-    fill: lch(from var(--color-text) calc(l * 0.8) c h);
+  color: lch(from var(--color-text) calc(l * 0.8) c h);
+  fill: lch(from var(--color-text) calc(l * 0.8) c h);
 }
 
 .navLinks li .icon {
-    font-size: 1rem;
-    margin-left: 0.5rem;
-    transition: all 0.2s ease-in-out;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  transition: all 0.2s ease-in-out;
 }
 
 @media (max-width: 768px) {
-    .navbar .menuButton {
-        display: flex;
-        anchor-name: --menuButton;
-    }
+  .navbar .menuButton {
+    display: flex;
+    anchor-name: --menuButton;
+  }
 
-    .navLinks::before {
-        content: "";
-        position: absolute;
-        top: -0.4rem;
-        right: 0;
-        background-color: var(--color-primary);
-        width: 0.8rem;
-        height: 0.8rem;
-        transform: translateX(-0.6rem) rotate(45deg);
-    }
+  .navLinks::before {
+    content: '';
+    position: absolute;
+    top: -0.4rem;
+    right: 0;
+    background-color: var(--color-primary);
+    width: 0.8rem;
+    height: 0.8rem;
+    transform: translateX(-0.6rem) rotate(45deg);
+  }
 
-    .navLinks {
-        display: none;
-        background: var(--color-primary);
-        padding: 1.5rem;
-        margin-top: 1rem;
-        border-radius: 0.25rem;
-        flex-direction: column;
-        position-anchor: --menuButton;
-        position: absolute;
-        top: anchor(bottom);
-        right: anchor(right);
-    }
+  .navLinks {
+    display: none;
+    background: var(--color-primary);
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 0.25rem;
+    flex-direction: column;
+    position-anchor: --menuButton;
+    position: absolute;
+    top: anchor(bottom);
+    right: anchor(right);
+  }
 
-    .navLinks.open {
-        display: flex;
-    }
+  .navLinks.open {
+    display: flex;
+  }
 }
