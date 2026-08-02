@@ -1,0 +1,9 @@
+.education {
+  background-image: linear-gradient(to bottom, var(--color-secondary), var(--color-primary) 8rem);
+}
+
+.degree-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   color: var(--color-text);
 }
 
@@ -11,7 +11,7 @@ html {
 }
 
 section {
-  display: flex;  
+  display: flex;
   flex-direction: column;
   padding: 2rem 8dvw;
 }

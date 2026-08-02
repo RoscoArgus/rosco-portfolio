@@ -1,13 +1,12 @@
-:root {    
-    --color-text: #fff;
-    --color-primary: #0C3340;
-    --color-secondary: #2D6E85;
-    --color-bg: #114B5F;  
+:root {
+  --color-text: #fff;
+  --color-primary: #0c3340;
+  --color-secondary: #2d6e85;
+  --color-bg: #114b5f;
 
-    --font-roboto: "Roboto", Arial, Helvetica, sans-serif;
+  --font-roboto: 'Roboto', Arial, Helvetica, sans-serif;
 
-    --navbar-height: 7.5rem;
-    
-    background-color: var(--color-bg);
+  --navbar-height: 7.5rem;
+
+  background-color: var(--color-bg);
 }
-  
