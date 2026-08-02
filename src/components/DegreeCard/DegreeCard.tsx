@@ -9,7 +9,7 @@ interface DegreeCardProps {
 
 const DegreeCard: React.FC<DegreeCardProps> = ({ degree }) => {
   const [awardType, setAwardType] = useState<'honours' | 'gpa'>('honours');
-  const { institution, title, dates, icon, yearlyGrades, achievements } = degree;
+  const { institution, title, dates, icon, yearlyGrades, additionalContent } = degree;
   const [classification, setClassification] = useState<{ grade: string; description: string } | null>(null);
   const [gpa, setGPA] = useState<string | null>(null);
 
@@ -33,11 +33,16 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree }) => {
           </div>
         </div>
         <div className="degree-body">
-          <ul>
-            {achievements.map((achievement, index) => (
-              <li key={index}>{achievement}</li>
-            ))}
-          </ul>
+          {additionalContent.map((content, index) => (
+            <div key={index} className="additional-content">
+              <h4>{content.title}</h4>
+              <ul>
+                {content.content.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
       <div className="degree-award">

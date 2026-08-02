@@ -17,6 +17,7 @@
   align-items: flex-start;
   align-self: stretch;
   gap: 1rem;
+  padding: 1rem;
 }
 
 .degree-header {
@@ -37,7 +38,13 @@
 }
 
 .degree-body {
-  margin-left: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.additional-content ul {
+    margin-left: 2.4rem;
 }
 
 .degree-award {
@@ -56,7 +63,7 @@
 .award-grade {
   font-size: 5rem;
   font-weight: 600;
-  margin: -0.5rem 0 -0.5rem;
+  margin: -0.5rem 0 0 0;
 }
 
 .award-description {
@@ -103,4 +110,19 @@
 .award-toggle button.active {
   background-color: var(--color-bg);
   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .degree-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .degree-content {
+    align-items: center;
+  }
+
+  .degree-award {
+    width: 100%;
+  }
 }

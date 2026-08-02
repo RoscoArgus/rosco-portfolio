@@ -4,7 +4,7 @@ export interface Degree {
   title: string;
   dates: string;
   yearlyGrades: DegreeYear[];
-  achievements: string[];
+  additionalContent: AdditionalContent[];
 }
 
 export interface DegreeYear {
@@ -17,4 +17,9 @@ interface Grade {
   module: string;
   etcs: number;
   mark: number;
+}
+
+interface AdditionalContent {
+  title: string;
+  content: string[];
 }

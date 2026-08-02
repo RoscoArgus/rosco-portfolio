@@ -7,8 +7,65 @@ const Education = () => {
     {
       institution: 'Trinity College Dublin',
       icon: tcd_logo,
+      title: 'Master of Computer Science (MCS)',
+      dates: 'Sept. 2025 – May 2026',
+      yearlyGrades: [
+        {
+          year: 1,
+          weight: 1,
+          grades: [
+            {
+              module: 'MSc in CS Dissertation',
+              etcs: 30,
+              mark: 83,
+            },
+            {
+              module: 'Research and Innovation Methods',
+              etcs: 5,
+              mark: 70,
+            },
+            {
+              module: 'Data Visualisation',
+              etcs: 5,
+              mark: 82,
+            },
+            {
+              module: 'Information Retrieval and Web Search',
+              etcs: 5,
+              mark: 75,
+            },
+            {
+              module: 'Internet of Things',
+              etcs: 5,
+              mark: 92,
+            },
+            {
+              module: 'Security and Privacy',
+              etcs: 5,
+              mark: 76,
+            },
+            {
+              module: 'Extended Reality',
+              etcs: 5,
+              mark: 89,
+            },
+          ],
+        },
+      ],
+      additionalContent: [
+        {
+          title: 'Dissertation',
+          content: [
+            'A study on the accessible design of computing education workshops for families of blind and visually impaired children, with a focus on the use of assitive technologies and tactile manipulatives.',
+          ],
+        },
+      ],
+    },
+    {
+      institution: 'Trinity College Dublin',
+      icon: tcd_logo,
       title: 'Bachelors of Computer Science (BA)',
-      dates: 'Sept. 2021 - May 2025',
+      dates: 'Sept. 2021 – May 2025',
       yearlyGrades: [
         {
           year: 3,
@@ -118,57 +175,16 @@ const Education = () => {
           ],
         },
       ],
-      achievements: [],
-    },
-    {
-      institution: 'Trinity College Dublin',
-      icon: tcd_logo,
-      title: 'Master of Computer Science (MCS)',
-      dates: 'Sept. 2025 - May 2026',
-      yearlyGrades: [
+      additionalContent: [
         {
-          year: 1,
-          weight: 1,
-          grades: [
-            {
-              module: 'MSc in CS Dissertation',
-              etcs: 30,
-              mark: 83,
-            },
-            {
-              module: 'Research and Innovation Methods',
-              etcs: 5,
-              mark: 70,
-            },
-            {
-              module: 'Data Visualisation',
-              etcs: 5,
-              mark: 82,
-            },
-            {
-              module: 'Information Retrieval and Web Search',
-              etcs: 5,
-              mark: 75,
-            },
-            {
-              module: 'Internet of Things',
-              etcs: 5,
-              mark: 92,
-            },
-            {
-              module: 'Security and Privacy',
-              etcs: 5,
-              mark: 76,
-            },
-            {
-              module: 'Extended Reality',
-              etcs: 5,
-              mark: 89,
-            },
-          ],
+          title: 'Dublin University Computer Science Society (DUCSS)',
+          content: ['Member since 2021', 'Amenities Officer 2023/2024', 'Competitions Officer 2024/2025'],
+        },
+        {
+          title: 'Hackathons',
+          content: ['J.P. Morgan Code for Good, Glasgow 2023'],
         },
       ],
-      achievements: [],
     },
   ];
 
