@@ -105,6 +105,7 @@
 
 .award-toggle button:active {
   transform: scale(0.95);
+  background-color: var(--color-bg);
 }
 
 .award-toggle button.active {
