@@ -33,7 +33,7 @@
   --depth: calc((cos(var(--angle)) + 1) / 2);
   transform: translate(-50%, -50%) translateX(calc(sin(var(--angle)) * var(--width)))
     translateZ(calc(cos(var(--angle)) * var(--width))) scale(calc(0.5 + var(--depth) * 0.5));
-  opacity: calc(0.15 + var(--depth) * 0.85);
+  /* opacity: calc(0.15 + var(--depth) * 0.85); */
 
   &::after {
     content: attr(title);
