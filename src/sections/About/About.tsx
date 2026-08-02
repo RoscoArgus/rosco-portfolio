@@ -79,6 +79,7 @@ const About = () => {
   return (
     <section className="about" id="about">
       <h1>About Me</h1>
+      <h2>Skills</h2>
       <Carousel items={skills} />
     </section>
   );
