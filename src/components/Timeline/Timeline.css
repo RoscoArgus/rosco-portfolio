@@ -1,0 +1,198 @@
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 4rem 2rem;
+    container-type: inline-size;
+    --timeline-item-size: 8rem;
+    --timeline-arc-size: 15.75rem;
+    --timeline-connector-width: calc(100cqw - (var(--timeline-item-size) + var(--timeline-arc-size) - 1.25rem));
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: var(--timeline-item-size);
+    height: var(--timeline-item-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+    border: none;
+    
+    &:focus {
+        outline: none;
+    }
+}
+
+.timeline-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 0.25rem solid #ffffff;
+    z-index: 1;
+    transition: transform 0.2s ease-in-out;
+}
+
+.timeline-item:first-child::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(-1 * (var(--timeline-connector-width) / 2) - 2rem);
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.timeline-item:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--timeline-connector-width);
+    height: 0.25rem;
+    background-color: #ffffff;
+}
+
+.timeline-item:first-child::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 3rem);
+    transform: translate(-50%, -50%);
+    width: calc(var(--timeline-connector-width) + 6rem);
+    height: 0.25rem;
+    background-color: #ffffff;
+}
+
+.timeline-item:nth-child(4n+2) {
+    align-self: flex-end;
+}
+
+.timeline-item:nth-child(4n+2)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-95%, -50%);
+    width: var(--timeline-arc-size);
+    height: var(--timeline-arc-size);
+    border-radius: 50%;
+    border: 0.25rem solid #ffffff;
+    clip-path: inset(0 0 0 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.timeline-item:nth-child(4n) {
+    align-self: flex-start;
+}
+
+.timeline-item:nth-child(4n)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-5%, -50%);
+    width: var(--timeline-arc-size);
+    height: var(--timeline-arc-size);
+    border-radius: 50%;
+    border: 0.25rem solid #ffffff;
+    clip-path: inset(0 50% 0 0);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.timeline-item:last-child:nth-child(4n)::before {
+    content: '...';
+    position: absolute;
+    font-size: 2rem;
+    font-weight: 600;
+    top: calc(50% + var(--timeline-arc-size) / 2 + 0.1rem);
+    right: calc(-1 * (var(--timeline-arc-size) / 2) + 1.75rem);
+    transform: translate(-50%, -75%);
+    pointer-events: none;
+}
+
+.timeline-item:last-child:nth-child(4n+1)::before {
+    content: '...';
+    position: absolute;
+    font-size: 2rem;
+    font-weight: 600;
+    top: 50%;
+    right: calc(-1 * (var(--timeline-connector-width) / 2) + 1.25rem);
+    transform: translate(-50%, -75%);
+    pointer-events: none;
+}
+
+.timeline-item:last-child:nth-child(4n+2)::before {
+    content: '...';
+    position: absolute;
+    font-size: 2rem;
+    font-weight: 600;
+    top: calc(50% + var(--timeline-arc-size) / 2 + 0.1rem);
+    left: calc(-1 * (var(--timeline-arc-size) / 2) + 3.55rem);
+    transform: translate(-50%, -75%);
+    pointer-events: none;
+}
+
+.timeline-item:last-child:nth-child(4n+3)::before {
+    content: '...';
+    position: absolute;
+    font-size: 2rem;
+    font-weight: 600;
+    top: 50%;
+    left: calc(-1 * (var(--timeline-connector-width) / 2) + 3rem);
+    transform: translate(-50%, -75%);
+    pointer-events: none;
+}
+
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.05);
+}
+
+.timeline-item:active .timeline-icon {
+    transform: scale(0.95);
+}
+
+.experience-popover {
+    position: fixed;
+    inset: 50%;
+    translate: -50% -50%;
+    width: 100dvw;
+    height: 100dvh;
+    padding: 2rem;
+    border: none;
+
+    scale: 0;
+
+    transition:
+        scale 200ms ease,
+        overlay 100ms allow-discrete,
+        display 100ms allow-discrete;
+}
+
+.experience-popover:popover-open {
+    scale: 1;
+}
+
+@starting-style {
+    .experience-popover:popover-open {
+        scale: 0;
+    }
+}
+
+.experience-banner {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
