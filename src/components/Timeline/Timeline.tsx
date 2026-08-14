@@ -12,7 +12,7 @@ interface Role {
   endDate: Date;
 }
 
-interface Experience {
+export interface Experience {
   title: string;
   roles: Role[];
   icon: string;
