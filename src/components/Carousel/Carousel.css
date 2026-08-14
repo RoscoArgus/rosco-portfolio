@@ -4,6 +4,12 @@
   initial-value: 0deg;
 }
 
+@property --progress { /* used for border grow on hover */
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
 .carousel {
   position: relative;
   list-style: none;
@@ -46,6 +52,26 @@
     opacity: 0;
     pointer-events: none;
   }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -0.25rem;
+    border-radius: 50%;
+    background: conic-gradient(#FFFFFF var(--progress), transparent var(--progress));
+    -webkit-mask: radial-gradient(circle farthest-side, transparent calc(100% - 0.25rem), black calc(100% - 0.25rem));
+    mask: radial-gradient(circle farthest-side, transparent calc(100% - 0.25rem), black calc(100% - 0.25rem));
+    transition: --progress 0.5s ease-in-out;
+    pointer-events: none;
+  }
+}
+
+.carousel li:hover::before {
+  --progress: 360deg;
+}
+
+.carousel li:hover::after {
+  opacity: 1;
 }
 
 .carouselImageContainer {
@@ -64,17 +90,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.carousel li:hover .carouselImageContainer {
-  box-shadow:
-    0 0 0.75rem rgba(255, 255, 255, 0.9),
-    0 0 1.5rem rgba(255, 255, 255, 0.5),
-    0 0 2.5rem rgba(255, 255, 255, 0.25);
-}
-
-.carousel li:hover::after {
-  opacity: 1;
 }
 
 @media (max-width: 768px) {
