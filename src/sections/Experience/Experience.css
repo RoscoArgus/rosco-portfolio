@@ -1,3 +1,9 @@
 .experience {
   background-image: linear-gradient(to bottom, var(--color-primary), var(--color-bg) 8rem);
 }
+
+@media (max-width: 768px) {
+  .experience {
+    align-items: center;
+  }
+}

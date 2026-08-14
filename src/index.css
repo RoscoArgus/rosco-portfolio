@@ -24,3 +24,9 @@ section > h1 {
 section:not(:first-child) {
   padding-top: 10rem;
 }
+
+@media (max-width: 768px) {
+  section h1, section h2 {
+    text-align: center;
+  }
+}

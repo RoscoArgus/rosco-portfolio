@@ -69,12 +69,12 @@
     border-radius: 15rem 15rem 3rem 3rem;
     padding: 2rem;
     height: auto;
-    width: 30rem;
+    width: max(80%, 25rem);
   }
 
   .heroContainer img {
-    width: 26rem;
-    height: 26rem;
+    width: max(80%, 21rem);
+    height: auto;
   }
 
   .heroContent {
