@@ -21,12 +21,17 @@
     width: 40%;
     color: #000000;
     border: 0.15rem solid #FFFFFF;
+    outline: 0.15rem solid transparent;
     border-radius: 0.25rem;
     padding: 0.5rem;
         
     &:focus {
-        outline: 0.1rem solid #ffffff;
         border: 0.15rem solid var(--color-primary);
+        outline: 0.15rem solid #FFFFFF;
+    }
+
+    &:user-invalid {
+        border: 0.15rem solid var(--color-error);
     }
 }
 
