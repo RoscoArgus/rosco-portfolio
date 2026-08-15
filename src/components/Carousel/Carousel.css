@@ -46,6 +46,7 @@
     position: absolute;
     bottom: -2rem;
     width: max-content;
+    font-weight: 600;
     left: 50%;
     transform: translateX(-50%);
     transition: opacity 0.2s ease-in-out;
