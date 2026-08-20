@@ -62,7 +62,7 @@ export const degrees: Degree[] = [
     {
       institution: 'Trinity College Dublin',
       icon: tcd_logo,
-      title: 'Bachelors of Computer Science (BA)',
+      title: 'Bachelor of Computer Science (BA)',
       dates: 'Sept. 2021 – May 2025',
       yearlyGrades: [
         {
