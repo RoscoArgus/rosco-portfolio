@@ -1,25 +1,20 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Hero from './sections/Hero/Hero';
-import About from './sections/About/About';
-import Experience from './sections/Experience/Experience';
-import Projects from './sections/Projects/Projects';
-import Contact from './sections/Contact/Contact';
-import Education from './sections/Education/Education';
+import Home from './pages/Home/Home';
+import Gallery from './pages/Gallery/Gallery';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
       <main className="app">
-        <Hero />
-        <About /> {/*Personal snippet. Maybe a quiz? or Flash cards like before? */}
-        <Education /> {/*Where did I go to college and what qualifications do I have? Facts about my time in college*/}
-        <Experience /> {/*What work / industry experience do I have?*/}
-        <Projects /> {/*What personal projects have I worked on? Programming, */}
-        <Contact /> {/**/}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
+        </Routes>
       </main>
-    </>
+    </BrowserRouter>
   );
 }
 
