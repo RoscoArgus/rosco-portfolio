@@ -12,9 +12,9 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ items }) => {
   return (
-    <ul className="carousel" style={{ '--n': items.length } as CSSProperties}>
+    <ul className="carousel">
       {items.map((item, index) => (
-        <li key={index} title={item.title} style={{ '--i': index, '--title': item.title } as CSSProperties}>
+        <li key={index} title={item.title} style={{ '--title': item.title } as CSSProperties}>
           <div className="carouselImageContainer">
             <img src={item.icon} alt={item.title} />
           </div>
