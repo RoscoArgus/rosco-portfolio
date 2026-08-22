@@ -37,6 +37,7 @@
   left: 50%;
   --angle: calc(var(--rotation) + (sibling-index() - 1) * (360deg / sibling-count()));
   --depth: calc((cos(var(--angle)) + 1) / 2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   transform: translate(-50%, -50%) translateX(calc(sin(var(--angle)) * var(--width)))
     translateZ(calc(cos(var(--angle)) * var(--width))) scale(calc(0.5 + var(--depth) * 0.5));
   /* opacity: calc(0.15 + var(--depth) * 0.85); */
