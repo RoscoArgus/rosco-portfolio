@@ -9,13 +9,14 @@ import javaIcon from '../assets/skills/java.png';
 import pythonIcon from '../assets/skills/python.png';
 import cIcon from '../assets/skills/c.png';
 import cppIcon from '../assets/skills/cpp.png';
+import cSharpIcon from '../assets/skills/csharp.png';
 import mysqlIcon from '../assets/skills/mysql.png';
 import firebaseIcon from '../assets/skills/firebase.png';
 import figmaIcon from '../assets/skills/figma.png';
 import photoshopIcon from '../assets/skills/photoshop.png';
 import officeIcon from '../assets/skills/office.png';
 
-interface Technology {
+export interface Technology {
     title: string;
     icon: string;
 }
@@ -64,6 +65,10 @@ export const Technologies: Record<string, Technology> = {
     CPP: {
       title: 'C++',
       icon: cppIcon,
+    },
+    CSharp: {
+      title: 'C#',
+      icon: cSharpIcon,
     },
     MySQL: {
       title: 'MySQL',
