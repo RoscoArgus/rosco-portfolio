@@ -26,6 +26,10 @@ section:not(:first-child) {
   padding-top: 10rem;
 }
 
+img, button {
+  user-select: none;
+}
+
 @media (max-width: 768px) {
   section h1, section h2 {
     text-align: center;
