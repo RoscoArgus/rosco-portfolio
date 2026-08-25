@@ -70,11 +70,11 @@
     border-radius: 15rem 15rem 3rem 3rem;
     padding: 2rem;
     height: auto;
-    width: max(80%, 25rem);
+    width: max(80%, 22rem);
   }
 
   .heroContainer img {
-    width: max(80%, 21rem);
+    width: max(80%, 18rem);
     height: auto;
   }
 
@@ -86,7 +86,12 @@
     text-align: center;
   }
 
+  .heroContent h1 {
+    font-size: 2.8rem;
+  }
+
   .heroContent p {
+    font-size: 1.2rem;
     margin: 0;
   }
 
