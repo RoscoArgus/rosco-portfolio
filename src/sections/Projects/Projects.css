@@ -13,12 +13,12 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1006px) {
   .projects-items {
     justify-content: flex-start;
     flex-wrap: nowrap;
     width: 100%;
-    --offset: calc(var(--index) * -26rem + 2rem);
+    --offset: calc(50% - 12.5rem - var(--index) * (27rem));
     transform: translateX(var(--offset));
     transition: transform 0.3s ease-in-out;
   }
