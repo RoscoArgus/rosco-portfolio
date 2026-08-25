@@ -52,7 +52,7 @@
     object-fit: contain;
     border-radius: 0.5rem;
     background-color: var(--color-text);
-    border: 0.15rem solid var(--color-text);
+    border: 0.1rem solid var(--color-text);
     transition: all 0.2s ease-in-out;
 
     &:hover {
