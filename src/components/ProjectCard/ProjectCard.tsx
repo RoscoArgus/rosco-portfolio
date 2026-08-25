@@ -45,35 +45,34 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="project-content">
         <div className="project-info">
           <h2>{project.title}</h2>
-          <span className="project-sources">
+          <div className="project-technologies">
+            {project.technologies.map((tech) => (
+              <img key={tech.title} src={tech.icon} alt={tech.title} title={tech.title} />
+            ))}
+          </div>
+          <p>{project.description}</p>
+          <h3>Key Features</h3>
+          <i>{project.keyFeatures.join(', ')}</i>
+        </div>
+        <div className="project-sources-container">
+          <h3>Sources</h3>
+          <div className="project-sources">
             {project.sourceCode && (
               <a title="GitHub Source Code" href={project.sourceCode} target="_blank" rel="noopener noreferrer">
                 <FaGithub className="icon" />
               </a>
             )}
             {project.video && (
-              <a
-                title="Video Demo"
-                href={project.link}
-                onClick={openVideoModal}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <button className="video-button" title="Video Demo" onClick={openVideoModal}>
                 <FaPlayCircle className="icon" />
-              </a>
+              </button>
             )}
             {project.link && (
               <a title={`Visit ${project.link}`} href={project.link} target="_blank" rel="noopener noreferrer">
                 <FaGlobe className="icon" />
               </a>
             )}
-          </span>
-          <p>{project.description}</p>
-        </div>
-        <div className="project-technologies">
-          {project.technologies.map((tech) => (
-            <img key={tech.title} src={tech.icon} alt={tech.title} title={tech.title} />
-          ))}
+          </div>
         </div>
       </div>
     </div>

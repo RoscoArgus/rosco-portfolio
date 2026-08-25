@@ -15,7 +15,7 @@ const projects: Project[] = [
     {
         title: 'roscoargus.dev',
         description: 'This very website! My personal portfolio website for showcasing my projects, skills, and experience as a software developer.',
-        keyFeatures: ['responsive design', 'animations'],
+        keyFeatures: ['Responsive Design', 'Animations'],
         technologies: [Technologies.React, Technologies.TypeScript],
         banner: roscoArgusBanner,
         backgroundColor: '#0C3340',
@@ -25,7 +25,7 @@ const projects: Project[] = [
     {
         title: 'County Hunter',
         description: 'A multiplayer geolocation game where players compete to discover a number of locations and finish with the highest score.',
-        keyFeatures: ['user authentication', 'real-time updates', 'geolocation', 'responsive design'],
+        keyFeatures: ['User Authentication', 'Real-Time Updates', 'Geolocation', 'Responsive Design'],
         technologies: [Technologies.React, Technologies.JavaScript, Technologies.Firebase],
         banner: countyHunterBanner,
         backgroundColor: '#FF4343',
@@ -35,7 +35,7 @@ const projects: Project[] = [
     {
         title: 'DUCSS App',
         description: 'A mobile application for the Dublin University Computer Science Society (DUCSS) to share news and resources and manage events and memberships for the society.',
-        keyFeatures: ['user authentication', 'mobile design', 'geolocation'],
+        keyFeatures: ['User Authentication', 'Mobile Design', 'Geolocation'],
         technologies: [Technologies.ReactNative, Technologies.JavaScript, Technologies.Firebase],
         banner: ducssBanner,
         backgroundColor: '#FF9F2E',
@@ -44,7 +44,7 @@ const projects: Project[] = [
     {
         title: 'HomeBrew',
         description: 'An Internet of Things (IoT) coffee machine that offers users granular control over the brewing process, allowing them to create their perfect cup of coffee.',
-        keyFeatures: ['IoT', 'user authentication', 'real-time updates', 'data visualisation', 'mcp interfacing', 'llm integration'],
+        keyFeatures: ['IoT', 'User Authentication', 'Real-Time Updates', 'Data Visualisation', 'MCP', 'LLM Integration'],
         technologies: [Technologies.React, Technologies.TypeScript, Technologies.Python, Technologies.C, Technologies.MySQL],
         banner: homeBrewBanner,
         backgroundColor: '#2c1a07',
@@ -54,7 +54,7 @@ const projects: Project[] = [
     {
         title: 'Draw Your Weapons',
         description: 'An augmented reality (AR) Unity app for the Meta Quest 3 that demonstrates real-time procedural and AI-powered 3D model generation via the passthrough camera.',
-        keyFeatures: ['computer vision', '3D graphics', 'augmented reality', 'ai content generation'],
+        keyFeatures: ['Computer Vision', '3D Graphics', 'Augmented Reality', 'AI Content Generation'],
         technologies: [Technologies.CSharp],
         banner: drawYourWeaponsBanner,
         backgroundColor: '#5F5F5F',
@@ -64,7 +64,7 @@ const projects: Project[] = [
     {
         title: 'Taxy',
         description: 'An interactive AI taxonomy builder that assists in areas such as fraud detection and data classification.',
-        keyFeatures: ['data visualisation', 'ai content generation'],
+        keyFeatures: ['Data Visualisation', 'AI Content Generation'],
         technologies: [Technologies.React, Technologies.JavaScript, Technologies.Python],
         banner: taxyBanner,
         backgroundColor: '#4618D8',
@@ -74,7 +74,7 @@ const projects: Project[] = [
     {
         title: 'OurKidsCode: Accessible Pet',
         description: 'A WCAG-compliant website for the delivery of an accessible coding workshop for families with blind and visually impaired children.',
-        keyFeatures: ['accessibility', 'responsive design', 'high-contrast mode', 'screen-reader support'],
+        keyFeatures: ['Accessibility', 'Responsive Design', 'High-Contrast Mode', 'Screen-Reader Support'],
         technologies: [Technologies.React, Technologies.JavaScript],
         banner: ourKidsCodeBanner,
         backgroundColor: '#284389',
