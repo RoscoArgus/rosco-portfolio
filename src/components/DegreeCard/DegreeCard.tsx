@@ -8,7 +8,7 @@ interface DegreeCardProps {
 }
 
 const DegreeCard: React.FC<DegreeCardProps> = ({ degree }) => {
-  const [awardType, setAwardType] = useState<'honours' | 'percentage' | 'gpa'>('honours');
+  const [awardType, setAwardType] = useState<'percentage' | 'honours' | 'gpa'>('honours');
   const { institution, title, dates, icon, yearlyGrades, additionalContent } = degree;
   const [classification, setClassification] = useState<{ grade: string; description: string } | null>(null);
   const [gpa, setGPA] = useState<string | null>(null);
@@ -66,15 +66,6 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree }) => {
         <div className="award-toggle">
           <button
             type="button"
-            className={awardType === 'honours' ? 'active' : ''}
-            onClick={() => setAwardType('honours')}
-            aria-pressed={awardType === 'honours'}
-            title="Honours Classification"
-          >
-            Hons.
-          </button>
-          <button
-            type="button"
             className={awardType === 'percentage' ? 'active' : ''}
             aria-label="Percent Average"
             aria-pressed={awardType === 'percentage'}
@@ -82,6 +73,15 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree }) => {
             title="Percent Average"
           >
             %
+          </button>
+          <button
+            type="button"
+            className={awardType === 'honours' ? 'active' : ''}
+            onClick={() => setAwardType('honours')}
+            aria-pressed={awardType === 'honours'}
+            title="Honours Classification"
+          >
+            Hons.
           </button>
           <button
             type="button"

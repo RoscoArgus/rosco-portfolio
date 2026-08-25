@@ -88,8 +88,8 @@
   max-width: 7rem;
   background-color: var(--color-secondary);
   border: none;
+  font-size: 0.875rem;
   border-radius: 0.1rem;
-  font-size: 1.25rem;
   font-weight: 600;
   transition:
     background-color 0.2s ease,
@@ -98,13 +98,12 @@
 
 .award-toggle button:first-child {
   border-radius: 1rem 0.1rem 0.1rem 1rem;
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   padding-left: 0.25rem
 }
 
 .award-toggle button:last-child {
   border-radius: 0.1rem 1rem 1rem 0.1rem;
-  font-size: 0.875rem;
   padding-right: 0.25rem
 }
 
