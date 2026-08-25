@@ -1,0 +1,81 @@
+.project-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 17rem;
+    max-width: 18rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    background-color: var(--color-bg);
+    overflow: hidden;
+}
+
+.project-banner {
+    width: 100%;
+    height: 8rem;
+    object-fit: cover;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    gap: 1rem;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.project-technologies img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    background-color: var(--color-text);
+    border: 0.15rem solid var(--color-text);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.project-sources {
+    display: flex;
+    gap: 1rem;
+    font-size: 2rem;
+}
+
+.project-sources a {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.project-sources a .icon {
+    color: var(--color-text);
+    fill: var(--color-text);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        color: lch(from var(--color-text) calc(l * 0.8) c h);
+        fill: lch(from var(--color-text) calc(l * 0.8) c h);
+    }
+}

@@ -1,3 +1,16 @@
 .projects {
   background-image: linear-gradient(to bottom, var(--color-bg), var(--color-secondary) 8rem);
 }
+
+.projects-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .projects-items {
+    justify-content: center;
+  }
+}
