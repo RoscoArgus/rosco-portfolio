@@ -52,16 +52,6 @@ const projects: Project[] = [
         video: homeBrewDemo
     },
     {
-        title: 'OurKidsCode: Accessible Pet',
-        description: 'A WCAG-compliant website for the delivery of an accessible coding workshop for families with blind and visually impaired children.',
-        keyFeatures: ['accessibility', 'responsive design', 'high-contrast mode', 'screen-reader support'],
-        technologies: [Technologies.React, Technologies.JavaScript],
-        banner: ourKidsCodeBanner,
-        backgroundColor: '#284389',
-        sourceCode: 'https://github.com/RoscoArgus/accessible-pet',
-        link: 'https://pet.roscoargus.dev'
-    },
-    {
         title: 'Draw Your Weapons',
         description: 'An augmented reality (AR) Unity app for the Meta Quest 3 that demonstrates real-time procedural and AI-powered 3D model generation via the passthrough camera.',
         keyFeatures: ['computer vision', '3D graphics', 'augmented reality', 'ai content generation'],
@@ -80,6 +70,16 @@ const projects: Project[] = [
         backgroundColor: '#4618D8',
         sourceCode: 'https://github.com/RoscoArgus/taxy',
         video: taxyDemo
+    },
+    {
+        title: 'OurKidsCode: Accessible Pet',
+        description: 'A WCAG-compliant website for the delivery of an accessible coding workshop for families with blind and visually impaired children.',
+        keyFeatures: ['accessibility', 'responsive design', 'high-contrast mode', 'screen-reader support'],
+        technologies: [Technologies.React, Technologies.JavaScript],
+        banner: ourKidsCodeBanner,
+        backgroundColor: '#284389',
+        sourceCode: 'https://github.com/RoscoArgus/accessible-pet',
+        link: 'https://pet.roscoargus.dev'
     },
 ];
 
