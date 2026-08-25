@@ -79,3 +79,19 @@
         fill: lch(from var(--color-text) calc(l * 0.8) c h);
     }
 }
+
+.video-modal {
+    width: 80vw;
+    aspect-ratio: 16 / 9;
+    background-color: transparent;
+}
+
+.video-modal .video-skin {
+    outline: none; 
+    --media-border-radius: 0.5rem;
+    border: 0.15rem solid var(--color-text);     
+}
+
+.video-modal .video-skin .media-button--pip { 
+    display: none; 
+}

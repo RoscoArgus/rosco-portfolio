@@ -1,6 +1,10 @@
 import './ProjectCard.css';
 import { type Technology } from '../../constants/technologies';
 import { FaGithub, FaGlobe, FaPlayCircle } from 'react-icons/fa';
+import { useModal } from '../../context/ModalContext';
+
+import '@videojs/react/video/skin.css';
+import { VideoPlayer, VideoSkin, Video } from '@videojs/react/video';
 
 export interface Project {
   title: string;
@@ -19,6 +23,22 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const { openModal } = useModal();
+
+  const openVideoModal = () => {
+    if (project.video) {
+      openModal(
+        <div className="video-modal">
+          <VideoPlayer>
+            <VideoSkin className="video-skin">
+              <Video src={project.video} disablePictureInPicture />
+            </VideoSkin>
+          </VideoPlayer>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="project-card" style={{ backgroundColor: project.backgroundColor || 'var(--color-bg)' }}>
       <img className="project-banner" src={project.banner} />
@@ -32,7 +52,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               </a>
             )}
             {project.video && (
-              <a title="Video Demo" href={project.link} target="_blank" rel="noopener noreferrer">
+              <a
+                title="Video Demo"
+                href={project.link}
+                onClick={openVideoModal}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaPlayCircle className="icon" />
               </a>
             )}
