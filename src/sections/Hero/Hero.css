@@ -11,6 +11,7 @@
   width: 100%;
   border-radius: 10rem;
   padding: 0 0 0 8rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
 }
 
 .heroContent h1 {

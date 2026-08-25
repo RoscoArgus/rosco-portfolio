@@ -4,7 +4,7 @@
     flex: 1 1 17rem;
     max-width: 18rem;
     border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
     background-color: var(--color-bg);
     overflow: hidden;
 }
