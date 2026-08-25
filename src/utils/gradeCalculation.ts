@@ -78,6 +78,16 @@ const calculateYearlyGPA = (year: DegreeYear) => {
     return yearlyGPA;
 }
 
+const calculateYearlyPercentage = (year: DegreeYear) => {
+    const TOTAL_ETCS = year.grades.reduce((acc, grade) => acc + grade.etcs, 0);
+    if(TOTAL_ETCS === 0) {
+        throw new Error('Total ETCS for the year cannot be zero.');
+    }
+    const yearlyPercentage = year.grades.reduce((acc, grade) => acc + grade.mark * (grade.etcs / TOTAL_ETCS), 0);
+    console.log(`Year ${year.year} Percentage:`, yearlyPercentage);
+    return yearlyPercentage;
+}
+
 /**
 * Calculates the honours classification based on the yearly grades and their weights.
 * @param yearlyGrades - An array of DegreeYear objects representing the grades for each year.
@@ -114,4 +124,15 @@ export const calculateOverallGPA = (yearlyGrades: DegreeYear[]) => {
     const overallGPA = yearlyGrades?.reduce((acc, year) => acc + calculateYearlyGPA(year) * (year.weight / TOTAL_WEIGHT), 0);
     console.log('Overall GPA:', overallGPA);
     return overallGPA.toPrecision(3);
+}
+
+export const calculateOverallPercentage = (yearlyGrades: DegreeYear[]) => {
+    const TOTAL_WEIGHT = yearlyGrades?.reduce((acc, year) => acc + year.weight, 0);
+    if (TOTAL_WEIGHT === 0) {
+        throw new Error('Total weight of yearly grades cannot be zero.');
+    }
+
+    const overallPercentage = yearlyGrades?.reduce((acc, year) => acc + calculateYearlyPercentage(year) * (year.weight / TOTAL_WEIGHT), 0);
+    console.log('Overall Percentage:', overallPercentage);
+    return Math.round(overallPercentage).toString();
 }

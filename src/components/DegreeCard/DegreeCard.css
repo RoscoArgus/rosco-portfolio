@@ -54,7 +54,7 @@
   align-items: center;
   align-self: stretch;
   text-align: center;
-  width: 12rem;
+  width: 14rem;
   background-color: var(--color-primary);
   border-radius: 0.5rem;
   padding: 1rem;
@@ -82,19 +82,28 @@
 }
 
 .award-toggle button {
-  width: 50%;
-  max-width: 5rem;
+  flex: 1;
   height: 2rem;
   background-color: var(--color-secondary);
-  border-radius: 1rem 0.1rem 0.1rem 1rem;
   border: none;
+  border-radius: 0.1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
   transition:
     background-color 0.2s ease,
     transform 0.2s ease;
 }
 
+.award-toggle button:first-child {
+  border-radius: 1rem 0.1rem 0.1rem 1rem;
+  font-size: 0.875rem;
+  padding-left: 0.25rem
+}
+
 .award-toggle button:last-child {
   border-radius: 0.1rem 1rem 1rem 0.1rem;
+  font-size: 0.875rem;
+  padding-right: 0.25rem
 }
 
 .award-toggle button:hover {

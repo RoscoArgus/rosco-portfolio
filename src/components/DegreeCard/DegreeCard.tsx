@@ -1,17 +1,18 @@
 import './DegreeCard.css';
 import { useState, useEffect } from 'react';
 import { type Degree } from './DegreeCard.types';
-import { calculateClassification, calculateOverallGPA } from '../../utils/gradeCalculation';
+import { calculateClassification, calculateOverallGPA, calculateOverallPercentage } from '../../utils/gradeCalculation';
 
 interface DegreeCardProps {
   degree: Degree;
 }
 
 const DegreeCard: React.FC<DegreeCardProps> = ({ degree }) => {
-  const [awardType, setAwardType] = useState<'honours' | 'gpa'>('honours');
+  const [awardType, setAwardType] = useState<'honours' | 'percentage' | 'gpa'>('honours');
   const { institution, title, dates, icon, yearlyGrades, additionalContent } = degree;
   const [classification, setClassification] = useState<{ grade: string; description: string } | null>(null);
   const [gpa, setGPA] = useState<string | null>(null);
+  const [percentage, setPercentage] = useState<string | null>(null);
 
   useEffect(() => {
     const classificationResult = calculateClassification(yearlyGrades);
@@ -19,6 +20,9 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree }) => {
 
     const overallGPA = calculateOverallGPA(yearlyGrades);
     setGPA(overallGPA);
+
+    const overallPercentage = calculateOverallPercentage(yearlyGrades);
+    setPercentage(overallPercentage);
   }, [yearlyGrades]);
 
   return (
@@ -48,9 +52,15 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree }) => {
       <div className="degree-award">
         <h2>Awarded:</h2>
         <div className="award-details">
-          <p className="award-grade">{awardType === 'honours' ? classification?.grade : gpa}</p>
+          <p className="award-grade">
+            {awardType === 'honours' ? classification?.grade : awardType === 'percentage' ? `${percentage}%` : gpa}
+          </p>
           <p className="award-description">
-            {awardType === 'honours' ? classification?.description : 'Grade-Point Average'}
+            {awardType === 'honours'
+              ? classification?.description
+              : awardType === 'percentage'
+                ? 'Percent Average'
+                : 'Grade-Point Average'}
           </p>
         </div>
         <div className="award-toggle">
@@ -59,14 +69,26 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree }) => {
             className={awardType === 'honours' ? 'active' : ''}
             onClick={() => setAwardType('honours')}
             aria-pressed={awardType === 'honours'}
+            title="Honours Classification"
           >
-            Honours
+            Hons.
+          </button>
+          <button
+            type="button"
+            className={awardType === 'percentage' ? 'active' : ''}
+            aria-label="Percent Average"
+            aria-pressed={awardType === 'percentage'}
+            onClick={() => setAwardType('percentage')}
+            title="Percent Average"
+          >
+            %
           </button>
           <button
             type="button"
             className={awardType === 'gpa' ? 'active' : ''}
             onClick={() => setAwardType('gpa')}
             aria-pressed={awardType === 'gpa'}
+            title="Grade Point Average"
           >
             GPA
           </button>
