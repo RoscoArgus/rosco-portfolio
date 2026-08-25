@@ -96,7 +96,7 @@
 
 @media (max-width: 768px) {
   .carousel {
-    --width: 75dvw;
+    --width: 90dvw;
   }
 
   .carousel li::after {
