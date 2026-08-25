@@ -67,14 +67,14 @@
     flex-direction: column-reverse;
     justify-content: flex-end;
     align-items: center;
-    border-radius: 15rem 15rem 3rem 3rem;
+    border-radius: 18rem 18rem 3rem 3rem;
     padding: 2rem;
     height: auto;
     width: max(80%, 22rem);
   }
 
   .heroContainer img {
-    width: max(80%, 18rem);
+    width: max(100%, 18rem);
     height: auto;
   }
 
