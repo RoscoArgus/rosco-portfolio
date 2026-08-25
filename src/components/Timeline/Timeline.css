@@ -156,7 +156,7 @@
     pointer-events: none;
 }
 
-.timeline-item:hover .timeline-icon {
+.timeline-item:hover .timeline-icon, .timeline-item:focus .timeline-icon {
     transform: scale(1.05);
 }
 
