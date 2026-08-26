@@ -10,6 +10,12 @@
     --timeline-connector-width: calc(100cqw - (var(--timeline-item-size) + var(--timeline-arc-size) - 1.25rem));
 }
 
+.timeline h2 {
+    position: absolute;
+    top: anchor(top);
+    left: anchor(left);
+}
+
 .timeline-item {
     display: flex;
     flex-direction: column;

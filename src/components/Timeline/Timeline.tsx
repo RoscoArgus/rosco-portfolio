@@ -34,12 +34,14 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
   };
 
   return (
-    <div className="timeline">
-      {experiences.map((experience, index) => (
-        <button key={index} type="button" className="timeline-item" onClick={() => handleClick(experience)}>
-          <img className="timeline-icon" src={experience.icon} alt={experience.title} />
-        </button>
-      ))}
+    <>
+      <div className="timeline">
+        {experiences.map((experience, index) => (
+          <button key={index} type="button" className="timeline-item" onClick={() => handleClick(experience)}>
+            <img className="timeline-icon" src={experience.icon} alt={experience.title} />
+          </button>
+        ))}
+      </div>
       {activeExperience && (
         <div
           ref={popoverRef}
@@ -52,7 +54,7 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
           {activeExperience.title}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

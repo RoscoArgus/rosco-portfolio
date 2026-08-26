@@ -5,8 +5,26 @@ import nitroIcon from '../../../assets/experience/nitro-icon.png';
 import nitroBanner from '../../../assets/experience/nitro-banner.png';
 import quantexaIcon from '../../../assets/experience/quantexa-icon.png';
 import quantexaBanner from '../../../assets/experience/quantexa-banner.png';
+import odeonIcon from '../../../assets/experience/odeon-icon.png';
+import odeonBanner from '../../../assets/experience/odeon-banner.png';
+import tcdIcon from '../../../assets/experience/tcd-icon.png';
+import tcdBanner from '../../../assets/experience/tcd-banner.png';
   
 const experiences: Experience[] = [
+    {
+      title: 'Odeon Cinemas',
+      roles: [
+        {
+          title: 'Cinema Host',
+          startDate: new Date('2021-06-21'),
+          endDate: new Date('2025-01-12'),
+          description: 'TODO',
+        },
+      ],
+      icon: odeonIcon,
+      banner: odeonBanner,
+      backgroundColor: '#00235B',
+    },
     {
       title: 'Nitro',
       roles: [
@@ -48,6 +66,20 @@ const experiences: Experience[] = [
       icon: workdayIcon,
       banner: workdayBanner,
       backgroundColor: '#0F2E66',
+    },
+    {
+      title: 'Trinity Business School',
+      roles: [
+        {
+          title: 'Operations Assistant',
+          startDate: new Date('2025-09-29'),
+          endDate: new Date('2026-07-31'),
+          description: 'TODO',
+        }
+      ],
+      icon: tcdIcon,
+      banner: tcdBanner,
+      backgroundColor: '#0071BD',
     },
 ];
 
