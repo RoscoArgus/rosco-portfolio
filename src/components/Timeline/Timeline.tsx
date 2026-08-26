@@ -21,39 +21,37 @@ export interface Experience {
 }
 
 const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
-  const [activeExperience, setActiveExperience] = useState<Experience | null>(null);
+  const getRoleTitle = (experience: Experience): string => {
+    switch (experience.roles.length) {
+      case 0:
+        throw new Error(`Experience "${experience.title}" has no roles.`);
+      case 1:
+        return experience.roles[0].title;
+      default:
+        return 'Multiple Roles';
+    }
+  };
 
-  const popoverRef = useRef<HTMLDivElement>(null);
-
-  const handleClick = (experience: Experience) => {
-    setActiveExperience(experience);
-
-    requestAnimationFrame(() => {
-      popoverRef.current?.showPopover();
-    });
+  const getDateRange = (experience: Experience): string => {
+    const startYear = experience.roles[0].startDate.getFullYear();
+    const endYear = experience.roles[experience.roles.length - 1].endDate.getFullYear();
+    return startYear === endYear ? `${startYear}` : `${startYear} - ${endYear}`;
   };
 
   return (
     <>
       <div className="timeline">
         {experiences.map((experience, index) => (
-          <button key={index} type="button" className="timeline-item" onClick={() => handleClick(experience)}>
+          <button key={index} type="button" className="timeline-item" onClick={() => {}}>
+            <div className="timeline-label">
+              <h2>{experience.title}</h2>
+              <h3>{getRoleTitle(experience)}</h3>
+              <p>{getDateRange(experience)}</p>
+            </div>
             <img className="timeline-icon" src={experience.icon} alt={experience.title} />
           </button>
         ))}
       </div>
-      {activeExperience && (
-        <div
-          ref={popoverRef}
-          id="experience-popover"
-          popover="auto"
-          className="experience-popover"
-          style={{ backgroundColor: activeExperience.backgroundColor }}
-        >
-          <img className="experience-banner" src={activeExperience.banner} alt={activeExperience.title} />
-          {activeExperience.title}
-        </div>
-      )}
     </>
   );
 };
