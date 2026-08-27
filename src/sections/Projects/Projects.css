@@ -7,8 +7,9 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   width: 100%;
-  gap: 2rem;
-  --offset: calc(50% - 12.5rem - var(--index) * (27rem));
+  --gap: 2rem;
+  gap: var(--gap);
+  --offset: calc(50% - (var(--project-card-width) / 2) - var(--index) * (var(--project-card-width) + var(--gap)));
   transform: translateX(var(--offset));
   transition: transform 0.3s ease-in-out;
 }
@@ -62,7 +63,7 @@
   justify-content: center;
   align-items: center;
   font-size: 4rem;
-  width: 25rem;
+  width: var(--project-card-width);
   flex: 0 0 auto;
   border: 0.25rem dashed rgba(255, 255, 255, 0.2);
   border-radius: 1rem;

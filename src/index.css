@@ -6,6 +6,10 @@
   color: var(--color-text);
 }
 
+:root {
+  background-color: var(--color-bg);
+}
+
 html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
