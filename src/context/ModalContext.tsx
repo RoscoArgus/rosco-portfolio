@@ -15,10 +15,14 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const openModal = useCallback((content: ReactNode) => {
     setContent(content);
+    document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.scrollbarGutter = 'initial';
     setIsOpen(true);
   }, []);
 
   const closeModal = useCallback(() => {
+    document.documentElement.style.overflow = 'initial';
+    document.documentElement.style.scrollbarGutter = 'stable';
     setIsOpen(false);
     setContent(null);
   }, []);
