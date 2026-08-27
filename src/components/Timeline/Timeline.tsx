@@ -1,6 +1,5 @@
 import './Timeline.css';
-import { useState, useRef } from 'react';
-
+import { useModal } from '../../context/ModalContext';
 interface TimelineProps {
   experiences: Experience[];
 }
@@ -14,6 +13,7 @@ interface Role {
 
 export interface Experience {
   title: string;
+  jobType?: 'Full-Time' | 'Part-Time' | 'Internship' | 'Industrial Project';
   roles: Role[];
   icon: string;
   banner: string;
@@ -21,6 +21,8 @@ export interface Experience {
 }
 
 const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
+  const { openModal } = useModal();
+
   const getRoleTitle = (experience: Experience): string => {
     switch (experience.roles.length) {
       case 0:
@@ -38,15 +40,49 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
     return startYear === endYear ? `${startYear}` : `${startYear} - ${endYear}`;
   };
 
+  const handleTimelineItemClick = (experience: Experience) => {
+    openModal(
+      <div className="experience-modal" style={{ backgroundColor: experience.backgroundColor }}>
+        <img className="experience-banner" src={experience.banner} alt={experience.title} />
+        <div className="experience-content">
+          <h2>{experience.title}</h2>
+          <p>{experience.jobType}</p>
+          <i>{getDateRange(experience)}</i>
+          <ul style={{ backgroundColor: `lch(from ${experience.backgroundColor} calc(l * 0.75) c h)` }}>
+            <h3>Roles</h3>
+            {experience.roles.map((role, index) => (
+              <>
+                <li className="role-item" key={index}>
+                  <h4>{role.title}</h4>
+                  <i>
+                    {role.startDate.toLocaleDateString('en-IE', { month: 'long', year: 'numeric' })} -{' '}
+                    {role.endDate.toLocaleDateString('en-IE', { month: 'long', year: 'numeric' })}
+                  </i>
+                  <p>{role.description}</p>
+                </li>
+                {index !== experience.roles.length - 1 && <hr style={{ backgroundColor: 'red' }} />}
+              </>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className="timeline">
         {experiences.map((experience, index) => (
-          <button key={index} type="button" className="timeline-item" onClick={() => {}}>
+          <button
+            key={index}
+            type="button"
+            className="timeline-item"
+            onClick={() => handleTimelineItemClick(experience)}
+          >
             <div className="timeline-label">
               <h2>{experience.title}</h2>
               <h3>{getRoleTitle(experience)}</h3>
-              <p>{getDateRange(experience)}</p>
+              <i>{getDateRange(experience)}</i>
             </div>
             <img className="timeline-icon" src={experience.icon} alt={experience.title} />
           </button>

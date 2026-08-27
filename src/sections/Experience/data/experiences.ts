@@ -13,7 +13,14 @@ import tcdBanner from '../../../assets/experience/tcd-banner.png';
 const experiences: Experience[] = [
     {
       title: 'Odeon Cinemas',
+      jobType: 'Part-Time',
       roles: [
+        {
+          title: 'Cinema Host',
+          startDate: new Date('2021-06-21'),
+          endDate: new Date('2025-01-12'),
+          description: 'TODO',
+        },
         {
           title: 'Cinema Host',
           startDate: new Date('2021-06-21'),
@@ -27,6 +34,7 @@ const experiences: Experience[] = [
     },
     {
       title: 'Nitro',
+      jobType: 'Industrial Project',
       roles: [
         {
           title: 'Student Software Engineer',
@@ -41,6 +49,7 @@ const experiences: Experience[] = [
     },
     {
       title: 'Quantexa',
+      jobType: 'Industrial Project',
       roles: [
         {
           title: 'Student Project Lead',
@@ -55,6 +64,7 @@ const experiences: Experience[] = [
     },
     {
       title: 'Workday',
+      jobType: 'Internship',
       roles: [
         {
           title: 'Software Development Engineer Intern',
@@ -69,6 +79,7 @@ const experiences: Experience[] = [
     },
     {
       title: 'Trinity Business School',
+      jobType: 'Part-Time',
       roles: [
         {
           title: 'Operations Assistant',
