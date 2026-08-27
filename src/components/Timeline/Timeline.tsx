@@ -10,7 +10,7 @@ interface Role {
   title: string;
   description: string;
   startDate: Date;
-  endDate: Date;
+  endDate?: Date;
 }
 
 export interface Experience {
@@ -38,7 +38,9 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
 
   const getDateRange = (experience: Experience): string => {
     const startYear = experience.roles[0].startDate.getFullYear();
-    const endYear = experience.roles[experience.roles.length - 1].endDate.getFullYear();
+    const latestRole = experience.roles[experience.roles.length - 1];
+    const endYear = latestRole.endDate ? latestRole.endDate.getFullYear() : 'Present';
+
     return startYear === endYear ? `${startYear}` : `${startYear} - ${endYear}`;
   };
 
@@ -57,8 +59,9 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
                 <li className="role-item" key={index}>
                   <h4>{role.title}</h4>
                   <i>
-                    {role.startDate.toLocaleDateString('en-IE', { month: 'long', year: 'numeric' })} -{' '}
-                    {role.endDate.toLocaleDateString('en-IE', { month: 'long', year: 'numeric' })}
+                    {role.startDate.toLocaleDateString('en-IE', { month: 'long', year: 'numeric' })}
+                    {role.endDate &&
+                      `- ` + role.endDate?.toLocaleDateString('en-IE', { month: 'long', year: 'numeric' })}
                   </i>
                   <p>{role.description}</p>
                 </li>

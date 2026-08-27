@@ -193,6 +193,8 @@
     border: 0.15rem solid var(--color-text);
     border-radius: 0.5rem;
     overflow: hidden;
+    overflow-y: auto;
+    max-height: 75dvh;
 }
 
 .experience-modal .experience-banner {
@@ -310,7 +312,7 @@
 
     .timeline-item:last-child:nth-child(n)::before {
         content: '__';
-        top: calc(100% + 0.5rem);
+        top: calc(100% + 0.65rem);
         left: 50%;
         right: auto;
     }
@@ -318,12 +320,34 @@
     .timeline-item:nth-child(n) .timeline-label {
         text-align: left;
         text-wrap: wrap;
-        width: clamp(12rem, 45dvw, 20rem);
+        width: clamp(10rem, 45dvw, 20rem);
         left: calc(100% + var(--timeline-label-offset));
         transform: translateY(-50%);
     }
 
     .experience-modal {
-        width: 90dvw;
+        width: 100dvw;
+        height: calc(100dvh + 30rem);
+        max-height: 100dvh;
+        border: none;
+        border-radius: 0;
+        padding-bottom: 6rem;
+    }
+
+    .experience-modal .experience-banner {
+        max-height: 10rem;
+    }
+
+    .close-button {
+        position: fixed;
+        width: 3rem;
+        height: 3rem;
+        padding: 0;
+        border-radius: 50%;
+        background-color: rgba(128, 128, 128, 0.7);
+        left: 50%;
+        top: auto;
+        bottom: 2rem;
+        transform: translateX(-50%);
     }
 }

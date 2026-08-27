@@ -86,6 +86,20 @@ const experiences: Experience[] = [
       banner: tcdBanner,
       backgroundColor: '#0071BD',
     },
+    {
+      title: 'Workday',
+      jobType: 'Full-Time',
+      roles: [
+        {
+          title: 'Software Development Engineer',
+          startDate: new Date('2026-09-21'),
+          description: 'Coming soon!',
+        },
+      ],
+      icon: workdayIcon,
+      banner: workdayBanner,
+      backgroundColor: '#0F2E66',
+    },
 ];
 
 export default experiences;
