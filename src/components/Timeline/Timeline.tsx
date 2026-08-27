@@ -73,18 +73,18 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
     <>
       <div className="timeline">
         {experiences.map((experience, index) => (
-          <button
-            key={index}
-            type="button"
-            className="timeline-item"
-            onClick={() => handleTimelineItemClick(experience)}
-          >
+          <button key={index} type="button" className="timeline-item">
             <div className="timeline-label">
               <h2>{experience.title}</h2>
               <h3>{getRoleTitle(experience)}</h3>
               <i>{getDateRange(experience)}</i>
             </div>
-            <img className="timeline-icon" src={experience.icon} alt={experience.title} />
+            <img
+              className="timeline-icon"
+              src={experience.icon}
+              alt={experience.title}
+              onClick={() => handleTimelineItemClick(experience)}
+            />
           </button>
         ))}
       </div>
