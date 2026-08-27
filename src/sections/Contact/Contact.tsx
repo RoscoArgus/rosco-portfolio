@@ -1,6 +1,6 @@
 import './Contact.css';
 import { useState } from 'react';
-import { FaCommentAlt } from 'react-icons/fa';
+import { FaEnvelopeOpenText, FaPaperPlane } from 'react-icons/fa';
 
 const Contact = () => {
   const [result, setResult] = useState<string | null>(null);
@@ -25,15 +25,19 @@ const Contact = () => {
   return (
     <section className="contact" id="contact">
       <h1>Contact</h1>
+      <p>Want to get in touch? Fill in the form below and I'll get back to you!</p>
       <div className="contact-container">
         <form className="contact-form" onSubmit={onSubmit}>
           <input type="text" name="name" placeholder="Name" required />
           <input type="email" name="email" placeholder="Email" required />
           <textarea name="message" placeholder="Message" required></textarea>
-          <button type="submit">Send</button>
+          <button type="submit">
+            Send
+            <FaPaperPlane className="send-icon" />
+          </button>
           <p>{result}</p>
         </form>
-        <FaCommentAlt className="contact-icon" />
+        <FaEnvelopeOpenText className="contact-icon" />
       </div>
     </section>
   );
