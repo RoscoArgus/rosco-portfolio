@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: max(100%, 28rem);
+    width: min(100%, 64rem);
+    margin-inline: auto;
     padding: 4rem 2rem;
     container-type: inline-size;
     --timeline-item-size: 8rem;
@@ -105,32 +106,32 @@
 }
 
 .timeline-item:last-child::before {
-    content: '...';
+    content: '|';
     position: absolute;
     font-size: 2rem;
     font-weight: 600;
-    transform: translate(-50%, -75%);
     pointer-events: none;
+    transform: translate(-50%, -50%);
 }
 
 .timeline-item:last-child:nth-child(4n)::before {
-    top: calc(50% + var(--timeline-arc-size) / 2 + 0.1rem);
-    right: calc(-1 * (var(--timeline-arc-size) / 2) + 1.75rem);
+    top: calc(150% - 0.25rem);
+    right: calc(-1 * (var(--timeline-arc-size) / 2) + 4rem);
 }
 
 .timeline-item:last-child:nth-child(4n+1)::before {
-    top: 50%;
-    right: calc(-1 * (var(--timeline-connector-width) / 2) + 1.25rem);
+    top: calc(50% - 0.2rem);
+    right: calc(-1 * (var(--timeline-connector-width) / 2) + 3.5rem);
 }
 
 .timeline-item:last-child:nth-child(4n+2)::before {
-    top: calc(50% + var(--timeline-arc-size) / 2 + 0.1rem);
-    left: calc(-1 * (var(--timeline-arc-size) / 2) + 3.55rem);
+    top: calc(150% - 0.2rem);
+    left: calc(-1 * (var(--timeline-arc-size) / 2) + 4.5rem);
 }
 
 .timeline-item:last-child:nth-child(4n+3)::before {
-    top: 50%;
-    left: calc(-1 * (var(--timeline-connector-width) / 2) + 3rem);
+    top: calc(50% - 0.2rem);
+    left: calc(-1 * (var(--timeline-connector-width) / 2) + 4rem);
 }
 
 .timeline-item .timeline-label {
@@ -162,6 +163,7 @@
     transform: translateY(-120%);
 }
 
+.timeline-item:nth-child(4n) .timeline-label, 
 .timeline-item:nth-child(4n+2) .timeline-label {
     transform: translateY(-50%);
 }
@@ -183,12 +185,13 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
     .timeline {
         display: flex;
-        width: 120%;
+        width: 24rem;
         gap: 1.5rem;
+        --timeline-item-size: 7rem;
     }
 
     .timeline-item:first-child::before {
@@ -218,10 +221,17 @@
         }
     }
 
+    .timeline-item:last-child:nth-child(n)::before {
+        content: '__';
+        top: calc(100% + 0.5rem);
+        left: 50%;
+        right: auto;
+    }
+
     .timeline-item:nth-child(n) .timeline-label {
         text-align: left;
         text-wrap: wrap;
-        max-width: 14rem;
+        width: clamp(12rem, 45dvw, 20rem);
         left: calc(100% + var(--timeline-label-offset));
         transform: translateY(-50%);
     }
