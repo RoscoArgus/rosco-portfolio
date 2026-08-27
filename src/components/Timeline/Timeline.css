@@ -186,6 +186,7 @@
 }
 
 .experience-modal {
+    position: relative;
     background-color: var(--color-bg);
     width: 65dvw;
     height: max-content;
@@ -241,12 +242,38 @@
     border: 0.1rem solid var(--color-text); 
 }
 
-.role-item {
+.close-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 
+    &:hover, :focus-visible {
+        transform: scale(1.1);
+
+        & .icon {
+            transition: all 0.2s ease-in-out;
+            color: lch(from var(--color-text) calc(l * 0.8) c h);
+            fill: lch(from var(--color-text) calc(l * 0.8) c h);
+        }
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
 }
 
 @media (max-width: 700px) {
-
     .timeline {
         display: flex;
         width: 24rem;
@@ -294,5 +321,9 @@
         width: clamp(12rem, 45dvw, 20rem);
         left: calc(100% + var(--timeline-label-offset));
         transform: translateY(-50%);
+    }
+
+    .experience-modal {
+        width: 90dvw;
     }
 }

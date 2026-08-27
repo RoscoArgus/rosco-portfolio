@@ -1,5 +1,7 @@
 import './Timeline.css';
 import { useModal } from '../../context/ModalContext';
+import { FaTimes } from 'react-icons/fa';
+
 interface TimelineProps {
   experiences: Experience[];
 }
@@ -21,7 +23,7 @@ export interface Experience {
 }
 
 const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
-  const { openModal } = useModal();
+  const { openModal, closeModal } = useModal();
 
   const getRoleTitle = (experience: Experience): string => {
     switch (experience.roles.length) {
@@ -64,6 +66,9 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
               </>
             ))}
           </ul>
+          <button className="close-button" onClick={closeModal}>
+            <FaTimes className="icon" />
+          </button>
         </div>
       </div>
     );
