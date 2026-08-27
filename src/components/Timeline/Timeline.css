@@ -205,29 +205,73 @@
 }
 
 .experience-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
     padding: 1rem;
+    gap: 1rem;
 }
 
-.experience-content > h2 {
-    margin-bottom: -0.25rem;
+.experience-modal .experience-banner-container {
+    position: relative;
+    width: 100%;
 }
 
-.experience-content > p {
-    font-size: 1.125rem;
-    font-weight: 600;
-}
-
-.experience-content > i {
+.experience-modal .experience-banner {
+    width: 100%;
+    height: auto;
+    max-height: 15rem;
+    object-fit: cover;
     display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
 }
 
-.experience-content ul {
-    list-style: none;
+.experience-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+}
+
+.experience-banner-overlay h2, .experience-banner-overlay p, .experience-banner-overlay i {
+    text-shadow: 0 0rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.experience-banner-overlay h2 {
+    font-size: 2rem;
+    margin-bottom: -0.2rem;
+}
+
+.experience-banner-overlay p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.15rem 0 0 0;
+}
+
+.experience-banner-overlay i {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+}
+
+.experience-content .roles, .experience-content .highlights {
     padding: 1rem;
     border-radius: 0.25rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.experience-content .roles {
+    list-style: none;
+}
+
+.experience-content .highlights li {
+    margin-left: 1.25rem;
 }
 
 .experience-content ul h3 {
@@ -237,6 +281,10 @@
 
 .role-item p {
     margin-top: 0.5rem;
+}
+
+.highlight-items {
+    list-style: initial;
 }
 
 .experience-content ul hr {
@@ -332,10 +380,12 @@
         border: none;
         border-radius: 0;
         padding-bottom: 6rem;
+        display: flex;
+        flex-direction: column;
     }
 
     .experience-modal .experience-banner {
-        max-height: 10rem;
+        max-height: 20rem;
     }
 
     .close-button {

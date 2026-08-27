@@ -17,6 +17,7 @@ export interface Experience {
   title: string;
   jobType?: 'Full-Time' | 'Part-Time' | 'Internship' | 'Industrial Project';
   roles: Role[];
+  highlights?: string[];
   icon: string;
   banner: string;
   backgroundColor: string;
@@ -47,12 +48,24 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
   const handleTimelineItemClick = (experience: Experience) => {
     openModal(
       <div className="experience-modal" style={{ backgroundColor: experience.backgroundColor }}>
-        <img className="experience-banner" src={experience.banner} alt={experience.title} />
+        <div className="experience-banner-container">
+          <img className="experience-banner" src={experience.banner} alt={experience.title} />
+          <div
+            className="experience-banner-overlay"
+            style={{
+              background: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, ${experience.backgroundColor} 100%)`,
+            }}
+          >
+            <h2>{experience.title}</h2>
+            <p>{experience.jobType}</p>
+            <i>{getDateRange(experience)}</i>
+          </div>
+        </div>
         <div className="experience-content">
-          <h2>{experience.title}</h2>
-          <p>{experience.jobType}</p>
-          <i>{getDateRange(experience)}</i>
-          <ul style={{ backgroundColor: `lch(from ${experience.backgroundColor} calc(l * 0.75) c h)` }}>
+          <ul
+            className="roles"
+            style={{ backgroundColor: `lch(from ${experience.backgroundColor} calc(l * 0.75) c h)` }}
+          >
             <h3>Roles</h3>
             {experience.roles.map((role, index) => (
               <>
@@ -69,6 +82,21 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
               </>
             ))}
           </ul>
+          {experience.highlights && (
+            <ul
+              className="highlights"
+              style={{ backgroundColor: `lch(from ${experience.backgroundColor} calc(l * 0.75) c h)` }}
+            >
+              <h3>Highlights</h3>
+              {experience.highlights.map((highlight, index) => (
+                <>
+                  <li key={index}>
+                    <p>{highlight}</p>
+                  </li>
+                </>
+              ))}
+            </ul>
+          )}
           <button className="close-button" onClick={closeModal}>
             <FaTimes className="icon" />
           </button>
