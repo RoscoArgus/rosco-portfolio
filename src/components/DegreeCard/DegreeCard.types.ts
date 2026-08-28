@@ -21,5 +21,14 @@ interface Grade {
 
 interface AdditionalContent {
   title: string;
-  content: string[];
+  content: (string | Content)[];
+}
+
+interface Hyperlink {
+  text: string;
+  url: string;
+}
+interface Content {
+  body: string;
+  links?: Hyperlink[];
 }

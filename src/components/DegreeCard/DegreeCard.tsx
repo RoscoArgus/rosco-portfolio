@@ -41,9 +41,25 @@ const DegreeCard: React.FC<DegreeCardProps> = ({ degree }) => {
             <div key={index} className="additional-content">
               <h4>{content.title}</h4>
               <ul>
-                {content.content.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
+                {content.content.map((item, idx) =>
+                  typeof item === 'string' ? (
+                    <li key={idx}>{item}</li>
+                  ) : (
+                    <li key={idx}>
+                      {item.body}
+                      {item.links &&
+                        item.links.length > 0 &&
+                        item.links.map((link, linkIdx) => (
+                          <>
+                            {' '}
+                            <a key={linkIdx} href={link.url}>
+                              {link.text}
+                            </a>
+                          </>
+                        ))}
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           ))}

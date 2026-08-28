@@ -54,7 +54,15 @@ export const degrees: Degree[] = [
         {
           title: 'Dissertation',
           content: [
-            'A study on the design of accessible computing education workshops for families of blind and visually impaired children, with a focus on the use of assitive technologies and tactile manipulatives.',
+            {
+              body: 'A study on the design of accessible computing education workshops for families of blind and visually impaired children, with a focus on the use of assitive technologies and tactile manipulatives.', 
+              links: [
+                {
+                  text: 'View Dissertation',
+                  url: '/view?file=dissertation'
+                }
+              ]
+            },
           ],
         },
       ],
