@@ -125,6 +125,7 @@
 }
 
 .video-modal .close-button {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,7 +133,6 @@
     height: 2rem;
     top: 1rem;
     right: 1rem;
-    position: absolute;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     border: none;
@@ -156,13 +156,16 @@
 
 @media (max-width: 768px) {
     .video-modal .close-button {
-        top: auto;
-        bottom: -5rem;
-        left: 50%;
-        transform: translateX(-50%);
+        position: fixed;
         width: 3rem;
         height: 3rem;
-        font-size: 2rem;
+        padding: 0;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.5);
+        left: 50%;
+        top: auto;
+        bottom: 2rem;
+        transform: translateX(-50%);
         opacity: 1;
 
         &:hover, &:focus-visible {
