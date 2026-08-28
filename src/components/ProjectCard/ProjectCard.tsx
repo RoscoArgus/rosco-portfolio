@@ -21,9 +21,10 @@ export interface Project {
 
 interface ProjectCardProps {
   project: Project;
+  isActive: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, isActive }) => {
   const { openModal, closeModal } = useModal();
 
   const openVideoModal = () => {
@@ -44,7 +45,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   };
 
   return (
-    <div className="project-card" style={{ backgroundColor: project.backgroundColor || 'var(--color-bg)' }}>
+    <div
+      className="project-card"
+      style={{ backgroundColor: project.backgroundColor || 'var(--color-bg)' }}
+      inert={isActive ? undefined : true}
+    >
       <img className="project-banner" src={project.banner} />
       <div className="project-content">
         <div className="project-info">

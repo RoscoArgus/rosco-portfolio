@@ -19,8 +19,8 @@ const Projects = () => {
         <div className="ghost-card">
           <FaTools className="icon" />
         </div>
-        {projects.map((project) => (
-          <ProjectCard project={project} />
+        {projects.map((project, index) => (
+          <ProjectCard key={project.title} project={project} isActive={index === currentIndex - 1} />
         ))}
         <div className="ghost-card">
           <FaTools className="icon" />
