@@ -3,7 +3,7 @@ import { createContext, useContext, useState, useCallback, type ReactNode } from
 interface ModelContextValue {
   isOpen: boolean;
   content: ReactNode | null;
-  openModal: (content: ReactNode, callbacks?: (() => void)[]) => void;
+  openModal: (content: ReactNode) => void;
   closeModal: () => void;
 }
 
@@ -12,22 +12,22 @@ const ModalContext = createContext<ModelContextValue | undefined>(undefined);
 export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [content, setContent] = useState<ReactNode | null>(null);
-  const [onCloseCallbacks, setOnCloseCallbacks] = useState<(() => void)[] | null>(null);
 
-  const openModal = useCallback((content: ReactNode, callbacks?: (() => void)[]) => {
+  const openModal = useCallback((content: ReactNode) => {
     setContent(content);
-    setOnCloseCallbacks(callbacks || null);
     document.documentElement.style.overflow = 'hidden';
     document.documentElement.style.scrollbarGutter = 'initial';
     setIsOpen(true);
   }, []);
 
   const closeModal = useCallback(() => {
-    onCloseCallbacks?.forEach((callback) => callback());
     document.documentElement.style.overflow = 'initial';
     document.documentElement.style.scrollbarGutter = 'stable';
     setIsOpen(false);
-  }, [onCloseCallbacks]);
+    setTimeout(() => {
+      setContent(null);
+    }, 250);
+  }, []);
 
   return <ModalContext.Provider value={{ isOpen, content, openModal, closeModal }}>{children}</ModalContext.Provider>;
 };

@@ -26,14 +26,6 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { openModal, closeModal } = useModal();
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  const handleVideoClose = () => {
-    if (videoRef?.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
 
   const openVideoModal = () => {
     if (project.video) {
@@ -41,14 +33,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <div className="video-modal">
           <VideoPlayer>
             <VideoSkin className="video-skin">
-              <Video ref={videoRef} src={project.video} disablePictureInPicture />
+              <Video src={project.video} disablePictureInPicture />
             </VideoSkin>
           </VideoPlayer>
           <button className="close-button" onClick={closeModal} aria-label="Close">
             <FaTimes className="icon" />
           </button>
-        </div>,
-        [handleVideoClose]
+        </div>
       );
     }
   };
