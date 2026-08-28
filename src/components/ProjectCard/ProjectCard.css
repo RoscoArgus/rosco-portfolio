@@ -151,3 +151,24 @@
         scale: 0.9;
     }
 }
+
+@media (max-width: 768px) {
+    .video-modal .close-button {
+        top: auto;
+        bottom: -5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3rem;
+        height: 3rem;
+        font-size: 2rem;
+        opacity: 1;
+
+        &:hover, &:focus-visible {
+            scale: 1.1;
+        }
+
+        &:active {
+            scale: 0.95;
+        }
+    }
+}

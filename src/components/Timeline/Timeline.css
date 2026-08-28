@@ -309,7 +309,7 @@
     transition: all 0.2s ease-in-out;
 
     &:hover, &:focus-visible {
-        transform: scale(1.1);
+        scale: 1.1;
 
         & .icon {
             transition: all 0.2s ease-in-out;
@@ -319,7 +319,7 @@
     }
 
     &:active {
-        transform: scale(0.95);
+        scale: 0.95;
     }
 }
 
@@ -394,10 +394,18 @@
         height: 3rem;
         padding: 0;
         border-radius: 50%;
-        background-color: rgba(128, 128, 128, 0.7);
+        background: rgba(0, 0, 0, 0.5);
         left: 50%;
         top: auto;
         bottom: 2rem;
         transform: translateX(-50%);
+
+        &:hover, &:focus-visible {
+            scale: 1.1;
+        }
+
+        &:active {
+            scale: 0.95;
+        }
     }
 }

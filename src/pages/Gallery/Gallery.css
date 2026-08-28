@@ -30,8 +30,8 @@
 
 .image-modal {
     display: block;
-    max-width: 90vw;
-    max-height: 90vh;
+    max-width: 90dvw;
+    max-height: 80dvh;
     border: 0.25rem solid var(--color-text);
     border-radius: 0.5rem;
     background-color: var(--color-bg);
@@ -82,41 +82,60 @@
     }
 }
 
-.close-button {
+.image-modal-wrapper .close-button {
     top: 1rem;
     right: 1rem;
 }
 
-.prev-button {
+.image-modal-wrapper .prev-button {
     top: 50%;
     left: 1rem;
     transform: translateY(-50%);
 }
 
-.next-button {
+.image-modal-wrapper .next-button {
     top: 50%;
     right: 1rem;
     transform: translateY(-50%);
 }
 
 .image-modal-wrapper:hover .caption-overlay,
-.image-modal-wrapper:focus-within .caption-overlay,
+.image-modal-wrapper .caption-overlay:focus-visible,
 .image-modal-wrapper:hover .close-button,
-.image-modal-wrapper:focus-within .close-button,
+.image-modal-wrapper .close-button:focus-visible,
 .image-modal-wrapper:hover .prev-button,
-.image-modal-wrapper:focus-within .prev-button,
+.image-modal-wrapper .prev-button:focus-visible,
 .image-modal-wrapper:hover .next-button,
-.image-modal-wrapper:focus-within .next-button {
+.image-modal-wrapper .next-button:focus-visible {
     opacity: 1;
     pointer-events: auto;
 }
 
 @media (hover: none), (pointer: coarse) {
-    .caption-overlay,
-    .close-button,
-    .prev-button,
-    .next-button {
+    .image-modal-wrapper .close-button, .image-modal-wrapper .prev-button, .image-modal-wrapper .next-button {
+        position: fixed;
         opacity: 1;
+        width: 3rem;
+        height: 3rem;
+        top: auto;
+        bottom: -4rem;
         pointer-events: auto;
+        transform: none;
+    }
+
+    .image-modal-wrapper .close-button {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .image-modal-wrapper .prev-button {
+        left: 1rem;
+        right: auto;
+    }
+
+    .image-modal-wrapper .next-button {
+        right: 1rem;
+        left: auto;
     }
 }
