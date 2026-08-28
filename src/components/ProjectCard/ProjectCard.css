@@ -122,6 +122,10 @@
   border: 0.15rem solid var(--color-text);
 }
 
+.media-default-skin--video:fullscreen {
+  border: none;
+}
+
 .video-modal .video-skin .media-button--pip {
   display: none;
 }
