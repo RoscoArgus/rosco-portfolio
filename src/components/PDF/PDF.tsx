@@ -1,4 +1,5 @@
 import './PDF.css';
+import { FaFilePdf } from 'react-icons/fa';
 
 export interface PDFDetails {
   src?: string;
@@ -6,13 +7,15 @@ export interface PDFDetails {
 }
 
 const PDF: React.FC<PDFDetails> = ({ src, title }) => {
-  if (!src) {
-    return <h2>No PDF source provided</h2>;
-  }
-
   return (
     <div className="pdf-container">
-      <iframe src={src} title={title || ''} />
+      {!src && (
+        <>
+          <FaFilePdf className="pdf-icon" />
+          <h2>No PDF source provided</h2>
+        </>
+      )}
+      {src && <iframe src={src} title={title || ''} />}
     </div>
   );
 };

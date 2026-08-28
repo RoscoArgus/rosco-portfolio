@@ -16,6 +16,12 @@
     border-radius: 1rem;
 }
 
+.pdf-container .pdf-icon {
+    font-size: 5rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
 @media (max-width: 768px) {
     .pdf-container {
         width: 100dvw;
