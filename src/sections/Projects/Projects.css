@@ -11,7 +11,7 @@
   gap: var(--gap);
   --offset: calc(50% - (var(--project-card-width) / 2) - var(--index) * (var(--project-card-width) + var(--gap)));
   transform: translateX(var(--offset));
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .projects-controls {

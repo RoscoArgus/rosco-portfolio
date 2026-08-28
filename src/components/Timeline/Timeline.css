@@ -292,7 +292,7 @@
     border: 0.1rem solid var(--color-text); 
 }
 
-.close-button {
+.experience-content .close-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -388,7 +388,7 @@
         max-height: 20rem;
     }
 
-    .close-button {
+    .experience-content .close-button {
         position: fixed;
         width: 3rem;
         height: 3rem;

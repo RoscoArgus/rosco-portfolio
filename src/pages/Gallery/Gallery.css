@@ -1,0 +1,122 @@
+.photo-gallery {
+    columns: 3 16rem;
+    column-gap: 1rem;
+}
+
+.photo-gallery img {
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+    border: 0.25rem solid var(--color-text);
+    border-radius: 0.5rem;
+    break-inside: avoid;
+    background-color: var(--color-secondary);
+    transition: transform 0.2s ease-in-out;
+
+    &:hover, &:focus-visible {
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transition: transform 0.2s ease-in-out;
+        transform: scale(0.95);
+    }
+}
+
+.image-modal-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.image-modal {
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+    border: 0.25rem solid var(--color-text);
+    border-radius: 0.5rem;
+    background-color: var(--color-bg);
+}
+
+.caption-overlay {
+    position: absolute;
+    inset: auto 0.25rem 0.25rem 0.25rem;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    text-align: left;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 0 0 0.25rem 0.25rem;
+    color: var(--color-text);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+
+    & h2 {
+        font-size: 1.25rem;
+    }
+}
+
+.close-button, .prev-button, .next-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    border: none;
+    color: var(--color-text);
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: background 0.2s ease-in-out, scale 0.2s ease-in-out, opacity 0.2s ease-in-out;
+
+    &:hover, &:focus-visible {
+        background: rgba(0, 0, 0, 0.7);
+        scale: 1.1;
+    }
+
+    &:active {
+        background: rgba(0, 0, 0, 0.9);
+        scale: 0.9;
+    }
+}
+
+.close-button {
+    top: 1rem;
+    right: 1rem;
+}
+
+.prev-button {
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.next-button {
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+}
+
+.image-modal-wrapper:hover .caption-overlay,
+.image-modal-wrapper:focus-within .caption-overlay,
+.image-modal-wrapper:hover .close-button,
+.image-modal-wrapper:focus-within .close-button,
+.image-modal-wrapper:hover .prev-button,
+.image-modal-wrapper:focus-within .prev-button,
+.image-modal-wrapper:hover .next-button,
+.image-modal-wrapper:focus-within .next-button {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .caption-overlay,
+    .close-button,
+    .prev-button,
+    .next-button {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
