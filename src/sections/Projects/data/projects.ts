@@ -8,8 +8,8 @@ import homeBrewBanner from '../../../assets/projects/homebrew.png';
 import ourKidsCodeBanner from '../../../assets/projects/ourkidscode.png';
 import roscoArgusBanner from '../../../assets/projects/roscoargus.png';
 import taxyDemo from '../../../assets/projects/videos/taxy_demo.mp4';
-import drawYourWeaponsDemo from '../../../assets/projects/videos/DrawYourWeapons_demo.mp4';
-import homeBrewDemo from '../../../assets/projects/videos/Homebrew_demo.mp4';
+import drawYourWeaponsDemo from '../../../assets/projects/videos/drawyourweapons_demo.mp4';
+import homeBrewDemo from '../../../assets/projects/videos/homebrew_demo.mp4';
 
 const projects: Project[] = [
   {
