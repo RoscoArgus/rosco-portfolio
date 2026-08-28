@@ -95,8 +95,16 @@ const Gallery = () => {
       <h1>Gallery</h1>
       <div className="photo-gallery">
         {images.map(({ src, alt, caption }, index) => (
-          <figure title={caption} key={src} className="photo-item" onClick={() => showImage(index)}>
-            <img src={src} alt={alt} loading="lazy" />
+          <figure key={src} className="photo-item">
+            <button
+              type="button"
+              className="photo-item-button"
+              title={caption}
+              aria-label={caption ? `View image: ${caption}` : `View image: ${alt}`}
+              onClick={() => showImage(index)}
+            >
+              <img src={src} alt={alt} loading="lazy" />
+            </button>
           </figure>
         ))}
       </div>
