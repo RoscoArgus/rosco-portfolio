@@ -2,6 +2,7 @@ import './ProjectCard.css';
 import { type Technology } from '../../constants/technologies';
 import { FaGithub, FaGlobe, FaPlayCircle } from 'react-icons/fa';
 import { useModal } from '../../context/ModalContext';
+import { useRef } from 'react';
 
 import '@videojs/react/video/skin.css';
 import { VideoPlayer, VideoSkin, Video } from '@videojs/react/video';
@@ -24,6 +25,14 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { openModal } = useModal();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const onVideoClose = () => {
+    if (videoRef?.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
 
   const openVideoModal = () => {
     if (project.video) {
@@ -31,10 +40,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <div className="video-modal">
           <VideoPlayer>
             <VideoSkin className="video-skin">
-              <Video src={project.video} disablePictureInPicture />
+              <Video ref={videoRef} src={project.video} disablePictureInPicture />
             </VideoSkin>
           </VideoPlayer>
-        </div>
+        </div>,
+        [onVideoClose]
       );
     }
   };

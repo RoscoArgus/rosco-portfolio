@@ -3,7 +3,7 @@ import { createContext, useContext, useState, useCallback, type ReactNode } from
 interface ModelContextValue {
   isOpen: boolean;
   content: ReactNode | null;
-  openModal: (content: ReactNode) => void;
+  openModal: (content: ReactNode, callbacks?: (() => void)[]) => void;
   closeModal: () => void;
 }
 
@@ -12,9 +12,11 @@ const ModalContext = createContext<ModelContextValue | undefined>(undefined);
 export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [content, setContent] = useState<ReactNode | null>(null);
+  const [onCloseCallbacks, setOnCloseCallbacks] = useState<(() => void)[] | null>(null);
 
-  const openModal = useCallback((content: ReactNode) => {
+  const openModal = useCallback((content: ReactNode, callbacks?: (() => void)[]) => {
     setContent(content);
+    setOnCloseCallbacks(callbacks || null);
     document.documentElement.style.overflow = 'hidden';
     document.documentElement.style.scrollbarGutter = 'initial';
     setIsOpen(true);
@@ -23,9 +25,9 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const closeModal = useCallback(() => {
     document.documentElement.style.overflow = 'initial';
     document.documentElement.style.scrollbarGutter = 'stable';
+    onCloseCallbacks?.forEach((callback) => callback());
     setIsOpen(false);
-    setContent(null);
-  }, []);
+  }, [onCloseCallbacks]);
 
   return <ModalContext.Provider value={{ isOpen, content, openModal, closeModal }}>{children}</ModalContext.Provider>;
 };

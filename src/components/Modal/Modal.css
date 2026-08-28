@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -19,4 +19,13 @@
         pointer-events: auto;
         transition: opacity 0.25s ease, visibility 0s linear;
     }
+}
+
+.modal-bg .modal-container {
+    scale: 0;
+    transition: scale 0.25s ease-in-out;
+}
+
+.modal-bg.open .modal-container {
+    scale: 1;
 }

@@ -17,11 +17,13 @@ const Modal = () => {
     return () => {
       document.removeEventListener('keydown', onEscape);
     };
-  }, []);
+  }, [closeModal]);
 
   return createPortal(
     <div className={'modal-bg' + (isOpen ? ' open' : '')} onClick={closeModal}>
-      <div onClick={(e) => e.stopPropagation()}>{content}</div>
+      <div className="modal-container" onClick={(e) => e.stopPropagation()}>
+        {content}
+      </div>
     </div>,
     document.body
   );
