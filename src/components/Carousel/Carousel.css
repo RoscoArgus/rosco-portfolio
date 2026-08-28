@@ -4,7 +4,8 @@
   initial-value: 0deg;
 }
 
-@property --progress { /* used for border grow on hover */
+@property --progress {
+  /* used for border grow on hover */
   syntax: '<angle>';
   inherits: false;
   initial-value: 0deg;
@@ -61,7 +62,7 @@
     position: absolute;
     inset: -0.18rem;
     border-radius: 1.18em;
-    background: conic-gradient(#FFFFFF var(--progress), transparent var(--progress));
+    background: conic-gradient(#ffffff var(--progress), transparent var(--progress));
     -webkit-mask: radial-gradient(square farthest-side, transparent calc(100% - 0.25rem), black calc(100% - 0.25rem));
     mask: radial-gradient(square farthest-side, transparent calc(100% - 0.25rem), black calc(100% - 0.25rem));
     transition: --progress 0.5s ease-in-out;

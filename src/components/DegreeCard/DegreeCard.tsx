@@ -1,5 +1,5 @@
 import './DegreeCard.css';
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { type Degree } from './DegreeCard.types';
 import { calculateClassification, calculateOverallGPA, calculateOverallPercentage } from '../../utils/gradeCalculation';
 
@@ -10,20 +10,10 @@ interface DegreeCardProps {
 const DegreeCard: React.FC<DegreeCardProps> = ({ degree }) => {
   const [awardType, setAwardType] = useState<'percentage' | 'honours' | 'gpa'>('honours');
   const { institution, title, dates, icon, yearlyGrades, additionalContent } = degree;
-  const [classification, setClassification] = useState<{ grade: string; description: string } | null>(null);
-  const [gpa, setGPA] = useState<string | null>(null);
-  const [percentage, setPercentage] = useState<string | null>(null);
 
-  useEffect(() => {
-    const classificationResult = calculateClassification(yearlyGrades);
-    setClassification(classificationResult);
-
-    const overallGPA = calculateOverallGPA(yearlyGrades);
-    setGPA(overallGPA);
-
-    const overallPercentage = calculateOverallPercentage(yearlyGrades);
-    setPercentage(overallPercentage);
-  }, [yearlyGrades]);
+  const classification = useMemo(() => calculateClassification(yearlyGrades), [yearlyGrades]);
+  const gpa = useMemo(() => calculateOverallGPA(yearlyGrades), [yearlyGrades]);
+  const percentage = useMemo(() => calculateOverallPercentage(yearlyGrades), [yearlyGrades]);
 
   return (
     <div className="degree-card">

@@ -2,7 +2,6 @@ import './ProjectCard.css';
 import { type Technology } from '../../constants/technologies';
 import { FaGithub, FaGlobe, FaPlayCircle } from 'react-icons/fa';
 import { useModal } from '../../context/ModalContext';
-import { useRef } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
 import '@videojs/react/video/skin.css';

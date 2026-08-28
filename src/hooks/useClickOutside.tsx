@@ -15,7 +15,7 @@ const useClickOutside = <T extends HTMLElement>(callback: () => void): React.Ref
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [callback]);
 
   return ref;
 };

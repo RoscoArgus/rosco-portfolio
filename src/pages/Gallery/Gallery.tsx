@@ -71,17 +71,11 @@ const Gallery = () => {
         </div>
       );
     },
-    [openModal]
+    [openModal, closeModal]
   );
 
   useEffect(() => {
-    if (!isOpen) {
-      setActiveIndex(null);
-    }
-  }, [isOpen]);
-
-  useEffect(() => {
-    if (activeIndex === null) return;
+    if (activeIndex === null || !isOpen) return;
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight') {
@@ -94,7 +88,7 @@ const Gallery = () => {
     document.addEventListener('keydown', onKeyDown);
 
     return () => document.removeEventListener('keydown', onKeyDown);
-  }, [activeIndex, showImage]);
+  }, [activeIndex, isOpen, showImage]);
 
   return (
     <section className="gallery">

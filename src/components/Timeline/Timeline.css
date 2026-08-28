@@ -1,411 +1,416 @@
 .timeline {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: min(100%, 64rem);
-    margin-inline: auto;
-    padding: 4rem 2rem;
-    container-type: inline-size;
-    --timeline-item-size: 8rem;
-    --timeline-arc-size: 15.75rem;
-    --timeline-connector-width: calc(100cqw - (var(--timeline-item-size) + var(--timeline-arc-size) - 1.25rem));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 64rem);
+  margin-inline: auto;
+  padding: 4rem 2rem;
+  container-type: inline-size;
+  --timeline-item-size: 8rem;
+  --timeline-arc-size: 15.75rem;
+  --timeline-connector-width: calc(100cqw - (var(--timeline-item-size) + var(--timeline-arc-size) - 1.25rem));
 }
 
 .timeline-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--timeline-item-size);
-    height: var(--timeline-item-size);
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-    transition: all 0.2s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--timeline-item-size);
+  height: var(--timeline-item-size);
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
 
-    &:focus-visible {
-        outline: none;
-    }
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .timeline-icon {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 0.25rem solid var(--color-text);
-    z-index: 1;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.25rem solid var(--color-text);
+  z-index: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
 .timeline-item:first-child::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: calc(-1 * (var(--timeline-connector-width) / 2) - 2rem);
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(-1 * (var(--timeline-connector-width) / 2) - 2rem);
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .timeline-item:nth-child(odd)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--timeline-connector-width);
+  height: 0.25rem;
+  background-color: #ffffff;
+}
+
+.timeline-item:first-child::after {
+  left: calc(50% - 3rem);
+  width: calc(var(--timeline-connector-width) + 6rem);
+}
+
+.timeline-item:nth-child(4n + 2) {
+  align-self: flex-end;
+
+  &::after {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: var(--timeline-connector-width);
-    height: 0.25rem;
-    background-color: #ffffff;
-}
-
-.timeline-item:first-child::after {
-    left: calc(50% - 3rem);
-    width: calc(var(--timeline-connector-width) + 6rem);
-}
-
-.timeline-item:nth-child(4n+2) {
-    align-self: flex-end;
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-95%, -50%);
-        width: var(--timeline-arc-size);
-        height: var(--timeline-arc-size);
-        border-radius: 50%;
-        border: 0.25rem solid #ffffff;
-        clip-path: inset(0 0 0 50%);
-        z-index: 0;
-    }
+    transform: translate(-95%, -50%);
+    width: var(--timeline-arc-size);
+    height: var(--timeline-arc-size);
+    border-radius: 50%;
+    border: 0.25rem solid #ffffff;
+    clip-path: inset(0 0 0 50%);
+    z-index: 0;
+  }
 }
 
 .timeline-item:nth-child(4n) {
-    align-self: flex-start;
+  align-self: flex-start;
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-5%, -50%);
-        width: var(--timeline-arc-size);
-        height: var(--timeline-arc-size);
-        border-radius: 50%;
-        border: 0.25rem solid #ffffff;
-        clip-path: inset(0 50% 0 0);
-        pointer-events: none;
-        z-index: 0;
-    }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-5%, -50%);
+    width: var(--timeline-arc-size);
+    height: var(--timeline-arc-size);
+    border-radius: 50%;
+    border: 0.25rem solid #ffffff;
+    clip-path: inset(0 50% 0 0);
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
 .timeline-item:last-child::before {
-    content: '|';
-    position: absolute;
-    font-size: 2rem;
-    font-weight: 600;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
+  content: '|';
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 600;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
 }
 
 .timeline-item:last-child:nth-child(4n)::before {
-    top: calc(150% - 0.25rem);
-    right: calc(-1 * (var(--timeline-arc-size) / 2) + 4rem);
+  top: calc(150% - 0.25rem);
+  right: calc(-1 * (var(--timeline-arc-size) / 2) + 4rem);
 }
 
-.timeline-item:last-child:nth-child(4n+1)::before {
-    top: calc(50% - 0.2rem);
-    right: calc(-1 * (var(--timeline-connector-width) / 2) + 3.5rem);
+.timeline-item:last-child:nth-child(4n + 1)::before {
+  top: calc(50% - 0.2rem);
+  right: calc(-1 * (var(--timeline-connector-width) / 2) + 3.5rem);
 }
 
-.timeline-item:last-child:nth-child(4n+2)::before {
-    top: calc(150% - 0.2rem);
-    left: calc(-1 * (var(--timeline-arc-size) / 2) + 4.5rem);
+.timeline-item:last-child:nth-child(4n + 2)::before {
+  top: calc(150% - 0.2rem);
+  left: calc(-1 * (var(--timeline-arc-size) / 2) + 4.5rem);
 }
 
-.timeline-item:last-child:nth-child(4n+3)::before {
-    top: calc(50% - 0.2rem);
-    left: calc(-1 * (var(--timeline-connector-width) / 2) + 4rem);
+.timeline-item:last-child:nth-child(4n + 3)::before {
+  top: calc(50% - 0.2rem);
+  left: calc(-1 * (var(--timeline-connector-width) / 2) + 4rem);
 }
 
 .timeline-item .timeline-label {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    white-space: nowrap;
-    top: 50%;
-    left: 50%;
-    width: max-content;
-    transition: all 0.2s ease-in-out;
-    --timeline-label-offset: 0.75rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  white-space: nowrap;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  transition: all 0.2s ease-in-out;
+  --timeline-label-offset: 0.75rem;
 }
 
 .timeline-item:nth-child(4n) .timeline-label,
-.timeline-item:nth-child(4n+1) .timeline-label {
-    text-align: left;
-    left: calc(100% + var(--timeline-label-offset));
-    right: auto;
-    transform: translateY(-120%);
+.timeline-item:nth-child(4n + 1) .timeline-label {
+  text-align: left;
+  left: calc(100% + var(--timeline-label-offset));
+  right: auto;
+  transform: translateY(-120%);
 }
 
-.timeline-item:nth-child(4n+2) .timeline-label,
-.timeline-item:nth-child(4n+3) .timeline-label {
-    text-align: right;
-    left: auto;
-    right: calc(100% + var(--timeline-label-offset));
-    transform: translateY(-120%);
+.timeline-item:nth-child(4n + 2) .timeline-label,
+.timeline-item:nth-child(4n + 3) .timeline-label {
+  text-align: right;
+  left: auto;
+  right: calc(100% + var(--timeline-label-offset));
+  transform: translateY(-120%);
 }
 
-.timeline-item:nth-child(4n) .timeline-label, 
-.timeline-item:nth-child(4n+2) .timeline-label {
-    transform: translateY(-50%);
+.timeline-item:nth-child(4n) .timeline-label,
+.timeline-item:nth-child(4n + 2) .timeline-label {
+  transform: translateY(-50%);
 }
 
 .timeline-item:has(.timeline-icon:hover),
 .timeline-item:focus-visible {
-    & .timeline-icon {
-        transform: scale(1.05);
-    }
+  & .timeline-icon {
+    transform: scale(1.05);
+  }
 
-    & .timeline-label {
-        scale: 1.05;
-    }
+  & .timeline-label {
+    scale: 1.05;
+  }
 }
 
 .timeline-item:has(.timeline-icon:active) {
-    & .timeline-icon {
-        transform: scale(0.95);
-    }
+  & .timeline-icon {
+    transform: scale(0.95);
+  }
 }
 
 .experience-modal {
-    position: relative;
-    background-color: var(--color-bg);
-    width: 65dvw;
-    height: max-content;
-    border: 0.15rem solid var(--color-text);
-    border-radius: 0.5rem;
-    overflow: hidden;
-    overflow-y: auto;
-    max-height: 75dvh;
+  position: relative;
+  background-color: var(--color-bg);
+  width: 65dvw;
+  height: max-content;
+  border: 0.15rem solid var(--color-text);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 75dvh;
 }
 
 .experience-modal .experience-banner {
-    width: 100%;
-    height: auto;
-    max-height: 15rem;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  max-height: 15rem;
+  object-fit: cover;
 }
 
 .experience-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: center;
-    padding: 1rem;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 .experience-modal .experience-banner-container {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .experience-modal .experience-banner {
-    width: 100%;
-    height: auto;
-    max-height: 15rem;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: auto;
+  max-height: 15rem;
+  object-fit: cover;
+  display: block;
 }
 
 .experience-banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0.5rem 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
 }
 
-.experience-banner-overlay h2, .experience-banner-overlay p, .experience-banner-overlay i {
-    text-shadow: 0 0rem 0.5rem rgba(0, 0, 0, 0.3);
+.experience-banner-overlay h2,
+.experience-banner-overlay p,
+.experience-banner-overlay i {
+  text-shadow: 0 0rem 0.5rem rgba(0, 0, 0, 0.3);
 }
 
 .experience-banner-overlay h2 {
-    font-size: 2rem;
-    margin-bottom: -0.2rem;
+  font-size: 2rem;
+  margin-bottom: -0.2rem;
 }
 
 .experience-banner-overlay p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0.15rem 0 0 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.15rem 0 0 0;
 }
 
 .experience-banner-overlay i {
-    display: block;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-top: 0.15rem;
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0.15rem;
 }
 
-.experience-content .roles, .experience-content .highlights {
-    padding: 1rem;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+.experience-content .roles,
+.experience-content .highlights {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
 }
 
 .experience-content .roles {
-    list-style: none;
+  list-style: none;
 }
 
 .experience-content .highlights li {
-    margin-left: 1.25rem;
+  margin-left: 1.25rem;
 }
 
 .experience-content ul h3 {
-    margin: 0;
-    padding: 0 0 0.5rem 0;
+  margin: 0;
+  padding: 0 0 0.5rem 0;
 }
 
 .role-item p {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .highlight-items {
-    list-style: initial;
+  list-style: initial;
 }
 
 .experience-content ul hr {
-    margin: 0.5rem 0;
-    border: 0.1rem solid var(--color-text); 
+  margin: 0.5rem 0;
+  border: 0.1rem solid var(--color-text);
 }
 
 .experience-modal .close-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 1.2rem;
-    height: 1.2rem;
-    top: 1rem;
-    right: 1rem;
-    background-color: transparent;
-    border: none;
-    color: var(--color-text);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 
-    &:hover, &:focus-visible {
-        scale: 1.1;
+  &:hover,
+  &:focus-visible {
+    scale: 1.1;
 
-        & .icon {
-            transition: all 0.2s ease-in-out;
-            color: lch(from var(--color-text) calc(l * 0.8) c h);
-            fill: lch(from var(--color-text) calc(l * 0.8) c h);
-        }
+    & .icon {
+      transition: all 0.2s ease-in-out;
+      color: lch(from var(--color-text) calc(l * 0.8) c h);
+      fill: lch(from var(--color-text) calc(l * 0.8) c h);
     }
+  }
 
-    &:active {
-        scale: 0.95;
-    }
+  &:active {
+    scale: 0.95;
+  }
 }
 
 @media (max-width: 700px) {
-    .timeline {
-        display: flex;
-        width: 24rem;
-        gap: 1.5rem;
-        --timeline-item-size: 7rem;
+  .timeline {
+    display: flex;
+    width: 24rem;
+    gap: 1.5rem;
+    --timeline-item-size: 7rem;
+  }
+
+  .timeline-item:first-child::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  .timeline-item:nth-child(n) {
+    align-self: flex-start;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0.25rem;
+      height: calc(var(--timeline-item-size) + 3rem);
+      background-color: var(--color-text);
+      border: none;
+      border-radius: 0;
+      clip-path: none;
+    }
+  }
+
+  .timeline-item:last-child:nth-child(n)::before {
+    content: '__';
+    top: calc(100% + 0.65rem);
+    left: 50%;
+    right: auto;
+  }
+
+  .timeline-item:nth-child(n) .timeline-label {
+    text-align: left;
+    text-wrap: wrap;
+    width: clamp(10rem, 45dvw, 20rem);
+    left: calc(100% + var(--timeline-label-offset));
+    transform: translateY(-50%);
+  }
+
+  .experience-modal {
+    width: 100dvw;
+    height: calc(100dvh + 30rem);
+    max-height: 100dvh;
+    border: none;
+    border-radius: 0;
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .experience-modal .experience-banner {
+    max-height: 20rem;
+  }
+
+  .experience-modal .close-button {
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    left: 50%;
+    top: auto;
+    bottom: 2rem;
+    transform: translateX(-50%);
+
+    &:hover,
+    &:focus-visible {
+      scale: 1.1;
     }
 
-    .timeline-item:first-child::before {
-        content: '';
-        position: absolute;
-        top: -30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
+    &:active {
+      scale: 0.95;
     }
-
-    .timeline-item:nth-child(n) {
-        align-self: flex-start;
-
-        &::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 0.25rem;
-            height: calc(var(--timeline-item-size) + 3rem);
-            background-color: var(--color-text);
-            border: none;
-            border-radius: 0;
-            clip-path: none;
-        }
-    }
-
-    .timeline-item:last-child:nth-child(n)::before {
-        content: '__';
-        top: calc(100% + 0.65rem);
-        left: 50%;
-        right: auto;
-    }
-
-    .timeline-item:nth-child(n) .timeline-label {
-        text-align: left;
-        text-wrap: wrap;
-        width: clamp(10rem, 45dvw, 20rem);
-        left: calc(100% + var(--timeline-label-offset));
-        transform: translateY(-50%);
-    }
-
-    .experience-modal {
-        width: 100dvw;
-        height: calc(100dvh + 30rem);
-        max-height: 100dvh;
-        border: none;
-        border-radius: 0;
-        padding-bottom: 6rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .experience-modal .experience-banner {
-        max-height: 20rem;
-    }
-
-    .experience-modal .close-button {
-        position: fixed;
-        width: 3rem;
-        height: 3rem;
-        padding: 0;
-        border-radius: 50%;
-        background: rgba(0, 0, 0, 0.5);
-        left: 50%;
-        top: auto;
-        bottom: 2rem;
-        transform: translateX(-50%);
-
-        &:hover, &:focus-visible {
-            scale: 1.1;
-        }
-
-        &:active {
-            scale: 0.95;
-        }
-    }
+  }
 }

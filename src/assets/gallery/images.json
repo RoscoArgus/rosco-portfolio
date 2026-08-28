@@ -1,33 +1,157 @@
 [
-  { "src": "01_ducss-agm.jpg", "alt": "Several people stood in a group in front of a projection of a duck.", "caption": "DUCSS Committee @ AGM 2023." },
-  { "src": "02_c4g_planning.jpg", "alt": "Two people talking in front of a whiteboard.", "caption": "Me @ J.P. Morgan's Code 4 Good Glasgow 2023, discussing planning for our project." },
-  { "src": "03_c4g_planning.gif", "alt": "Three people stood around a flipchart pad.", "caption": "Team discussing our project plan with a support volunteer @ J.P. Morgan's Code 4 Good Glasgow 2023." },
-  { "src": "04_c4g_coding.png", "alt": "Four people sat a long desk using their laptops.", "caption": "Team coding @ J.P. Morgan's Code 4 Good Glasgow 2023." },
-  { "src": "05_c4g_entrance.jpg", "alt": "Four people stood outside the entrance of a building marked 'J.P. Morgan'.", "caption": "Team picture after J.P. Morgan's Code 4 Good Glasgow 2023." },
-  { "src": "06_naked_calendar.jpg", "alt": "Two people holding signs in front of a campanile.", "caption": "Cancer Society Naked Calendar promotion @ Trinity College Dublin." },
-  { "src": "07_sweng_bleed.jpg", "alt": "A selfie of a person in front of a laptop with tissue in their nose.", "caption": "Me committing too hard to coding for Software Engineering Project 2024." },
-  { "src": "08_sweng_team.jpg", "alt": "Several people posing in a computer room.", "caption": "Team picture during Software Engineering Project 2024." },
-  { "src": "09_ducss_bloomberg.jpg", "alt": "Several people holding ID badges in the lobby of a building marked 'Bloomberg'.", "caption": "Visit to Bloomberg offices during DUCSS London Trip 2024." },
-  { "src": "10_ducss_bloomberg.jpg", "alt": "Two people taking a selfie in front of a monitor reading 'Bloomberg'.", "caption": "Visit to Bloomberg offices during DUCSS London Trip 2024." },
-  { "src": "11_ducss_bloomberg.jpg", "alt": "Several people stood outside a building marked 'Bloomberg'.", "caption": "DUCSS group photo outside Bloomberg offices during DUCSS London Trip 2024." },
-  { "src": "12_ducss_ms.jpg", "alt": "Several people stood in the lobby of a building marked 'Microsoft'.", "caption": "DUCSS group photo inside Microsoft offices during DUCSS London Trip 2024." },
-  { "src": "13_ducss_csc_awards.jpg", "alt": "Several people stood in a reception hall, one of whom is holding an award.", "caption": "DUCSS Committee photo with Sustainability Award @ CSC Awards 2024." },
-  { "src": "14_ducss_agm.jpg", "alt": "Several people gathered in front of a projection of a duck.", "caption": "DUCSS Committee @ AGM 2024." },
-  { "src": "15_ducss_freshsers.jpg", "alt": "A person being handed a flyer at an outdoor stand at a societies fair.", "caption": "Promoting DUCSS @ TCD Fresher's Fair 2024." },
-  { "src": "16_ducss_freshers.jpg", "alt": "Two people holding signs reading 'register' and 'i've registered to vote have you'", "caption": "Promoting DUCSS and Student Union voter registration @ TCD Fresher's Fair 2024." },
-  { "src": "17_ducss_quiz.jpg", "alt": "Three people gathered around a table looking at slips of paper.", "caption": "Tallying scores @ DUCSS Pub Quiz 2024." },
-  { "src": "18_ducss_hackathon.jpg", "alt": "Four people stood in front of a projector giving a presentation.", "caption": "Contestants presenting their projects @ DUCSS SULU 'Full-stack-athon' 2024."},
-  { "src": "19_ducss_donuts.jpg", "alt": "Several people gathered around a table marked 'DUCSS' collecting donuts and flyers.", "caption": "Handing out donuts and flyers to promote DUCSS sponsorship." },
-  { "src": "20_ross_workday.jpg", "alt": "A person stood in front of a sign marked 'Workday'.", "caption": "Me at the end of my first week of internship @ Workday." },
-  { "src": "21_ducss_fintech.jpg", "alt": "Several people eating pizza in front of a projector marked 'FinTech Careers Panel'.", "caption": "DUCSS FinTech Careers Panel." },
-  { "src": "22_ducss_sandbox.webp", "alt": "A person pointing to the entrance of a building marked 'Sandbox VR'.", "caption": "Me @ DUCSS Sandbox VR launch event." },
-  { "src": "23_ducss_sandbox.jpg", "alt": "Several people stood around a small room wearing VR headsets.", "caption": "DUCSS Sandbox VR launch event." },
-  { "src": "24_ducss_dinner.jpg", "alt": "Several people sat on either side of a long table with food.", "caption": "DUCSS Committee Dinner 2025." },
-  { "src": "25_ducss_charity.jpg", "alt": "A person stood in front of a cinema screen displaying a game.", "caption": "DUCSS Game 4 Good charity event setup." },
-  { "src": "26_ducss_agm.jpg", "alt": "A person stood holding a bouquet of flowers.", "caption": "Me @ DUCSS AGM 2025." },
-  { "src": "27_ducss_agm.jpg", "alt": "Several people stood in a group in front of a projector.", "caption": "DUCSS Committee @ AGM 2025." },
-  { "src": "28_workday_team.jpg", "alt": "Several people gathered around a picnic bench.", "caption": "Workday team photo." },
-  { "src": "29_workday_summer.png", "alt": "A selfie of three people outdoors wearing pink.", "caption": "Workday Summer Party 2025." },
-  { "src": "30_okc_taster.jpg", "alt": "A series of wires, paper plates, and a laptop on a white table.", "caption": "OurKidsCode workshop observation as part of dissertation planning." },
-  { "src": "31_okc_bob.jpg", "alt": "A fluffy, red, hand-crafted creature marked 'Bob'.", "caption": "Bob! A sample artefact from my dissertation coding workshop with families of BVI children." }
+  {
+    "src": "01_ducss-agm.jpg",
+    "alt": "Several people stood in a group in front of a projection of a duck.",
+    "caption": "DUCSS Committee @ AGM 2023."
+  },
+  {
+    "src": "02_c4g_planning.jpg",
+    "alt": "Two people talking in front of a whiteboard.",
+    "caption": "Me @ J.P. Morgan's Code 4 Good Glasgow 2023, discussing planning for our project."
+  },
+  {
+    "src": "03_c4g_planning.gif",
+    "alt": "Three people stood around a flipchart pad.",
+    "caption": "Team discussing our project plan with a support volunteer @ J.P. Morgan's Code 4 Good Glasgow 2023."
+  },
+  {
+    "src": "04_c4g_coding.png",
+    "alt": "Four people sat a long desk using their laptops.",
+    "caption": "Team coding @ J.P. Morgan's Code 4 Good Glasgow 2023."
+  },
+  {
+    "src": "05_c4g_entrance.jpg",
+    "alt": "Four people stood outside the entrance of a building marked 'J.P. Morgan'.",
+    "caption": "Team picture after J.P. Morgan's Code 4 Good Glasgow 2023."
+  },
+  {
+    "src": "06_naked_calendar.jpg",
+    "alt": "Two people holding signs in front of a campanile.",
+    "caption": "Cancer Society Naked Calendar promotion @ Trinity College Dublin."
+  },
+  {
+    "src": "07_sweng_bleed.jpg",
+    "alt": "A selfie of a person in front of a laptop with tissue in their nose.",
+    "caption": "Me committing too hard to coding for Software Engineering Project 2024."
+  },
+  {
+    "src": "08_sweng_team.jpg",
+    "alt": "Several people posing in a computer room.",
+    "caption": "Team picture during Software Engineering Project 2024."
+  },
+  {
+    "src": "09_ducss_bloomberg.jpg",
+    "alt": "Several people holding ID badges in the lobby of a building marked 'Bloomberg'.",
+    "caption": "Visit to Bloomberg offices during DUCSS London Trip 2024."
+  },
+  {
+    "src": "10_ducss_bloomberg.jpg",
+    "alt": "Two people taking a selfie in front of a monitor reading 'Bloomberg'.",
+    "caption": "Visit to Bloomberg offices during DUCSS London Trip 2024."
+  },
+  {
+    "src": "11_ducss_bloomberg.jpg",
+    "alt": "Several people stood outside a building marked 'Bloomberg'.",
+    "caption": "DUCSS group photo outside Bloomberg offices during DUCSS London Trip 2024."
+  },
+  {
+    "src": "12_ducss_ms.jpg",
+    "alt": "Several people stood in the lobby of a building marked 'Microsoft'.",
+    "caption": "DUCSS group photo inside Microsoft offices during DUCSS London Trip 2024."
+  },
+  {
+    "src": "13_ducss_csc_awards.jpg",
+    "alt": "Several people stood in a reception hall, one of whom is holding an award.",
+    "caption": "DUCSS Committee photo with Sustainability Award @ CSC Awards 2024."
+  },
+  {
+    "src": "14_ducss_agm.jpg",
+    "alt": "Several people gathered in front of a projection of a duck.",
+    "caption": "DUCSS Committee @ AGM 2024."
+  },
+  {
+    "src": "15_ducss_freshsers.jpg",
+    "alt": "A person being handed a flyer at an outdoor stand at a societies fair.",
+    "caption": "Promoting DUCSS @ TCD Fresher's Fair 2024."
+  },
+  {
+    "src": "16_ducss_freshers.jpg",
+    "alt": "Two people holding signs reading 'register' and 'i've registered to vote have you'",
+    "caption": "Promoting DUCSS and Student Union voter registration @ TCD Fresher's Fair 2024."
+  },
+  {
+    "src": "17_ducss_quiz.jpg",
+    "alt": "Three people gathered around a table looking at slips of paper.",
+    "caption": "Tallying scores @ DUCSS Pub Quiz 2024."
+  },
+  {
+    "src": "18_ducss_hackathon.jpg",
+    "alt": "Four people stood in front of a projector giving a presentation.",
+    "caption": "Contestants presenting their projects @ DUCSS SULU 'Full-stack-athon' 2024."
+  },
+  {
+    "src": "19_ducss_donuts.jpg",
+    "alt": "Several people gathered around a table marked 'DUCSS' collecting donuts and flyers.",
+    "caption": "Handing out donuts and flyers to promote DUCSS sponsorship."
+  },
+  {
+    "src": "20_ross_workday.jpg",
+    "alt": "A person stood in front of a sign marked 'Workday'.",
+    "caption": "Me at the end of my first week of internship @ Workday."
+  },
+  {
+    "src": "21_ducss_fintech.jpg",
+    "alt": "Several people eating pizza in front of a projector marked 'FinTech Careers Panel'.",
+    "caption": "DUCSS FinTech Careers Panel."
+  },
+  {
+    "src": "22_ducss_sandbox.webp",
+    "alt": "A person pointing to the entrance of a building marked 'Sandbox VR'.",
+    "caption": "Me @ DUCSS Sandbox VR launch event."
+  },
+  {
+    "src": "23_ducss_sandbox.jpg",
+    "alt": "Several people stood around a small room wearing VR headsets.",
+    "caption": "DUCSS Sandbox VR launch event."
+  },
+  {
+    "src": "24_ducss_dinner.jpg",
+    "alt": "Several people sat on either side of a long table with food.",
+    "caption": "DUCSS Committee Dinner 2025."
+  },
+  {
+    "src": "25_ducss_charity.jpg",
+    "alt": "A person stood in front of a cinema screen displaying a game.",
+    "caption": "DUCSS Game 4 Good charity event setup."
+  },
+  {
+    "src": "26_ducss_agm.jpg",
+    "alt": "A person stood holding a bouquet of flowers.",
+    "caption": "Me @ DUCSS AGM 2025."
+  },
+  {
+    "src": "27_ducss_agm.jpg",
+    "alt": "Several people stood in a group in front of a projector.",
+    "caption": "DUCSS Committee @ AGM 2025."
+  },
+  {
+    "src": "28_workday_team.jpg",
+    "alt": "Several people gathered around a picnic bench.",
+    "caption": "Workday team photo."
+  },
+  {
+    "src": "29_workday_summer.png",
+    "alt": "A selfie of three people outdoors wearing pink.",
+    "caption": "Workday Summer Party 2025."
+  },
+  {
+    "src": "30_okc_taster.jpg",
+    "alt": "A series of wires, paper plates, and a laptop on a white table.",
+    "caption": "OurKidsCode workshop observation as part of dissertation planning."
+  },
+  {
+    "src": "31_okc_bob.jpg",
+    "alt": "A fluffy, red, hand-crafted creature marked 'Bob'.",
+    "caption": "Bob! A sample artefact from my dissertation coding workshop with families of BVI children."
+  }
 ]

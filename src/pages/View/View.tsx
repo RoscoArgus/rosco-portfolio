@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import PDF, { type PDFDetails } from '../../components/PDF/PDF';
+import PDF from '../../components/PDF/PDF';
 import './View.css';
 
 const pdfModules = import.meta.glob('../../assets/pdf/*.pdf', {
@@ -17,27 +16,10 @@ for (const [path, url] of Object.entries(pdfModules)) {
 
 const View = () => {
   const [searchParams] = useSearchParams();
-  const [pdfDetails, setPdfDetails] = useState<PDFDetails | null>(null);
 
   const fileParam = searchParams.get('file');
-
-  useEffect(() => {
-    if (!fileParam) {
-      setPdfDetails(null);
-      return;
-    }
-
-    const src = resolvedPdfs[fileParam];
-
-    if (src) {
-      setPdfDetails({
-        src,
-        title: fileParam,
-      });
-    } else {
-      setPdfDetails(null);
-    }
-  }, [fileParam]);
+  const pdfSrc = fileParam ? resolvedPdfs[fileParam] : undefined;
+  const pdfDetails = pdfSrc ? { src: pdfSrc, title: fileParam || '' } : undefined;
 
   return (
     <section className="view">

@@ -5,7 +5,7 @@ import Home from './pages/Home/Home';
 import Gallery from './pages/Gallery/Gallery';
 import View from './pages/View/View';
 import Modal from './components/Modal/Modal';
-import { ModalProvider } from './context/ModalContext';
+import { ModalProvider } from './context/ModalProvider';
 
 function App() {
   return (
