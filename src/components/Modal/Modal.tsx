@@ -1,30 +1,44 @@
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useModal } from '../../context/ModalContext';
-import { useEffect } from 'react';
 import './Modal.css';
 
 const Modal = () => {
   const { isOpen, content, closeModal } = useModal();
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
-    const onEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    };
+    const dialog = dialogRef.current;
+    if (!dialog) return;
 
-    document.addEventListener('keydown', onEscape);
-    return () => {
-      document.removeEventListener('keydown', onEscape);
-    };
-  }, [closeModal]);
+    if (isOpen) {
+      if (!dialog.open) {
+        dialog.showModal(); // Opens modal and traps focus automatically
+      }
+    } else {
+      if (dialog.open) {
+        dialog.close();
+      }
+    }
+  }, [isOpen]);
+
+  // Handle native Escape key press
+  const handleCancel = (e: React.SyntheticEvent<HTMLDialogElement, Event>) => {
+    e.preventDefault(); // Prevent native browser closing to let React state manage it
+    closeModal();
+  };
+
+  // Close when clicking the backdrop
+  const handleClick = (e: React.MouseEvent<HTMLDialogElement>) => {
+    if (e.target === dialogRef.current) {
+      closeModal();
+    }
+  };
 
   return createPortal(
-    <div className={'modal-bg' + (isOpen ? ' open' : '')} onClick={closeModal}>
-      <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-        {content}
-      </div>
-    </div>,
+    <dialog ref={dialogRef} className="modal-container" onCancel={handleCancel} onClick={handleClick}>
+      {content}
+    </dialog>,
     document.body
   );
 };
