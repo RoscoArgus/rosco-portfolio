@@ -3,6 +3,7 @@ import { type Technology } from '../../constants/technologies';
 import { FaGithub, FaGlobe, FaPlayCircle } from 'react-icons/fa';
 import { useModal } from '../../context/ModalContext';
 import { useRef } from 'react';
+import { FaTimes } from 'react-icons/fa';
 
 import '@videojs/react/video/skin.css';
 import { VideoPlayer, VideoSkin, Video } from '@videojs/react/video';
@@ -24,10 +25,10 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const { openModal } = useModal();
+  const { openModal, closeModal } = useModal();
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const onVideoClose = () => {
+  const handleVideoClose = () => {
     if (videoRef?.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
@@ -43,8 +44,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               <Video ref={videoRef} src={project.video} disablePictureInPicture />
             </VideoSkin>
           </VideoPlayer>
+          <button className="close-button" onClick={closeModal} aria-label="Close">
+            <FaTimes className="icon" />
+          </button>
         </div>,
-        [onVideoClose]
+        [handleVideoClose]
       );
     }
   };

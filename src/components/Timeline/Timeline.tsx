@@ -53,7 +53,7 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
           <div
             className="experience-banner-overlay"
             style={{
-              background: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, ${experience.backgroundColor} 100%)`,
+              background: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%)`,
             }}
           >
             <h2>{experience.title}</h2>
@@ -97,10 +97,10 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
               ))}
             </ul>
           )}
-          <button className="close-button" onClick={closeModal}>
-            <FaTimes className="icon" />
-          </button>
         </div>
+        <button className="close-button" onClick={closeModal}>
+          <FaTimes className="icon" />
+        </button>
       </div>
     );
   };

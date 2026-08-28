@@ -103,9 +103,15 @@
 }
 
 .video-modal {
+    position: relative;
     width: 80vw;
     aspect-ratio: 16 / 9;
     background-color: transparent;
+
+    &:hover .close-button {
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 
 .video-modal .video-skin {
@@ -116,4 +122,32 @@
 
 .video-modal .video-skin .media-button--pip { 
     display: none; 
+}
+
+.video-modal .close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    border: none;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: background 0.2s ease-in-out, scale 0.2s ease-in-out, opacity 0.2s ease-in-out;
+
+    &:hover, &:focus-visible {
+        background: rgba(0, 0, 0, 0.7);
+        scale: 1.1;
+    }
+
+    &:active {
+        background: rgba(0, 0, 0, 0.9);
+        scale: 0.9;
+    }
 }

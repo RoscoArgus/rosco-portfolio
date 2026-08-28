@@ -23,9 +23,9 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   }, []);
 
   const closeModal = useCallback(() => {
+    onCloseCallbacks?.forEach((callback) => callback());
     document.documentElement.style.overflow = 'initial';
     document.documentElement.style.scrollbarGutter = 'stable';
-    onCloseCallbacks?.forEach((callback) => callback());
     setIsOpen(false);
   }, [onCloseCallbacks]);
 

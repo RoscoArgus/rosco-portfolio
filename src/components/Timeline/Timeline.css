@@ -292,7 +292,7 @@
     border: 0.1rem solid var(--color-text); 
 }
 
-.experience-content .close-button {
+.experience-modal .close-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -308,7 +308,7 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 
-    &:hover, :focus-visible {
+    &:hover, &:focus-visible {
         transform: scale(1.1);
 
         & .icon {
@@ -388,7 +388,7 @@
         max-height: 20rem;
     }
 
-    .experience-content .close-button {
+    .experience-modal .close-button {
         position: fixed;
         width: 3rem;
         height: 3rem;
