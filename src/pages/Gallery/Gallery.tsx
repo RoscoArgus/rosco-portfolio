@@ -4,7 +4,7 @@ import imageData from '../../assets/gallery/images.json';
 import { useModal } from '../../context/ModalContext';
 import { FaTimes, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-const imageModules = import.meta.glob('../../assets/gallery/*.{png,jpg,jpeg,gif}', {
+const imageModules = import.meta.glob('../../assets/gallery/*.{png,jpg,jpeg,gif,webp}', {
   eager: true,
   import: 'default',
 }) as Record<string, string>;
