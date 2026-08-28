@@ -19,9 +19,12 @@ const Navbar = () => {
   };
 
   const links: Link[] = [
-    { text: 'About Me', href: '/#about' },
     { text: 'Gallery', href: '/gallery' },
-    { text: 'Contact', href: 'mailto:roscod@live.ie', external: true },
+    { text: 'About Me', href: '/#about' },
+    { text: 'Education', href: '#education' },
+    { text: 'Experience', href: '/#experience' },
+    { text: 'Projects', href: '/#projects' },
+    { text: 'Contact', href: '/#contact' },
   ];
 
   return (

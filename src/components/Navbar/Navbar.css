@@ -57,7 +57,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
   .navbar .menuButton {
     display: flex;
     anchor-name: --menuButton;
