@@ -13,7 +13,7 @@ const Modal = () => {
 
     if (isOpen) {
       if (!dialog.open) {
-        dialog.showModal(); // Opens modal and traps focus automatically
+        dialog.showModal();
       }
     } else {
       if (dialog.open) {
@@ -22,13 +22,11 @@ const Modal = () => {
     }
   }, [isOpen]);
 
-  // Handle native Escape key press
   const handleCancel = (e: React.SyntheticEvent<HTMLDialogElement, Event>) => {
-    e.preventDefault(); // Prevent native browser closing to let React state manage it
+    e.preventDefault();
     closeModal();
   };
 
-  // Close when clicking the backdrop
   const handleClick = (e: React.MouseEvent<HTMLDialogElement>) => {
     if (e.target === dialogRef.current) {
       closeModal();
