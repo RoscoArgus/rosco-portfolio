@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
 import Gallery from './pages/Gallery/Gallery';
 import View from './pages/View/View';
+import Wishlist from './pages/Wishlist/Wishlist';
 import Modal from './components/Modal/Modal';
 import { ModalProvider } from './context/ModalProvider';
 
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/view" element={<View />} />
+            <Route path="/wishlist" element={<Wishlist />} />
           </Routes>
           <Modal />
         </main>
