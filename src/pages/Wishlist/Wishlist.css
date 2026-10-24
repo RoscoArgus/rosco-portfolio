@@ -553,6 +553,17 @@
     align-self: center;
   }
 
+  .wishlist-card button,
+  .wishlist-profile button,
+  .wishlist-owner-modal button,
+  .wishlist-dialog button,
+  .wishlist-message button,
+  .wishlist-owner-item button,
+  .wishlist-form > button {
+    align-self: center;
+    width: 100%;
+  }
+
   .wishlist-heading > div,
   .wishlist-profile,
   .wishlist-owner-modal {
